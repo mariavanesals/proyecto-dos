@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet"
+            href="./css/bootstrap.min.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/loginstyle2.css">
+    </head>
+    <body>
+        <nav class="navTop navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+            <a class="navbar-brand" href="pacientes.html">
+                <img src="img/logo2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                San Remo
+              </a>
+            <ul class="nav2 nav navbar-nav ml-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Soy paciente</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Soy doctor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Como funciona</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ingresar</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="modal-dialog text-center">
+            <div class="col-sm-8 main-section">
+                <div class="modal-content">
+                    <div class="col-12 user-img">
+                        <img src="img/logo.jpg">
+                    </div>
+                    <form class="col-12">
+                        <div class="form-group">
+                            <i class="fa fa-user icon">
+                            </i>
+                            <input type="text" class="form-control"
+                                placeholder="Ingresar Usuario">
+                        </div>
+                        <div class="form-group">
+                            <i id="lock" class="fas fa-lock"></i>
+                            <input type="password" class="form-control"
+                                placeholder="Ingresar Constrasena">
+                        </div>
+                        <button id="btn1" type="submit" class="btn"><i
+                                class="fas
+                                fa-sign-in-alt"></i>Ingresar</button>
+                    </form>
+                    <div class="col-12 forgot">
+                        <a href="#">Olvidaste tu clave?</a>
+                    </div>
+                </div> <!--End of Modal Content-->
+            </div>
+        </div>
+    </body>
+</html>

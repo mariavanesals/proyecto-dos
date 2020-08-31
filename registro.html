@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="js/script.js"> </script>
+
+    </head>
+    <body>
+        <nav class="navTop navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+            <a class="navbar-brand" href="pacientes.html">
+                <img src="img/logo2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                San Remo
+              </a>
+            <ul class="nav2 nav navbar-nav ml-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Soy paciente</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Soy doctor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Como funciona</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ingresar</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container cont1">
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div id="ui">
+                        <h1 class="text-center">Formulario de Registro</h1>
+                        <form class="form-group text-center" id="form">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Nombre:</label>
+                                    <input type="text" name="fname" id="name"
+                                        class="form-control">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Apellido:</label>
+                                    <input type="text" name="lname" id="lastName"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <br>
+                            <label>E-mail</label>
+                            <input type="email" name="email" id="email"
+                                class="form-control">
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Contrasena:</label>
+                                    <input type="password" name="fname" id="password"
+                                        class="form-control">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Repetir Contrasena:</label>
+                                    <input type="password" name="lname" id="password"
+                                        class="form-control">
+                                </div>
+                                <br>
+                            </form>
+                            <form>
+                                <select id="choose" class="form-control">
+                                    <option>Elegir Genero..</option>
+                                    <option>Hombre</option>
+                                    <option>Mujer</option>
+                                    <option>Otros</option>
+                                </select>
+
+                                <input id="submit" type="submit"
+                                    name="submit"
+                                    value="Registrarme"
+                                    class="btn btn-primary
+                                    btn-block btn-lg">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+
+                    </div>
+                    <div class="col-lg-3">
+
+                    </div>
+                </div>
+
+            </div>
+        </body>
+    </html>

@@ -1,0 +1,106 @@
+
+.nav2{
+    margin-right: 150px;
+}
+
+.navbar-brand{
+    margin-left: 150px;
+}
+
+.navTop{
+    border: 1px black solid;
+}
+
+.nav-item {
+    font-size: small;
+}
+
+.cartel-covid19 {
+    height: 70px;
+    width: 100%;
+    position: relative;
+}
+
+.cartel-covid19 .background {
+    mix-blend-mode: multiply;
+    background-color: #2edfe2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    will-change: opacity,transform;}
+
+
+.wrapper {
+    max-width: 525px;
+    margin: auto;
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+
+.container{
+    height: 150px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container .row {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container2{
+    height: 600px;
+    background-image: url("../img/background.jpg");
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+.section1{
+    background-color: #cdcdcd;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section1 .row {
+    width: 50%
+}
+
+
+.condiciones img {
+    height: 80px;
+    width: 80px;
+}
+
+.section3 {
+    background-image: url('../img/background2.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    text-align: center;
+
+}
+
+.section3 .row{
+    height: 600px;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.section3 p, h2 {
+    color: #fff;
+}
+
+.pasos {
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0 !important;
+}
+
+

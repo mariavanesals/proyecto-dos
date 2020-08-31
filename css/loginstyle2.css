@@ -1,0 +1,111 @@
+.nav2{
+    margin-right: 150px;
+}
+
+.navbar-brand{
+    margin-left: 150px;
+}
+
+.navTop{
+    border: 1px black solid;
+}
+
+navbar {
+    position: absolute;
+}
+
+.nav-link1 {
+    background-color: #48e;
+    color: #ededed;
+    margin-top: auto;
+	margin-left:6px;
+	padding: 6px 9px;
+    border-radius: 5px;
+}
+
+.nav-link1:hover {
+    background-color: #48e;
+	color: #fff;
+    text-shadow: 0px 0px 9px #24a
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+body {
+    font-family: "roboto", sans-serif;
+    background: url(../img/loginbackground.jpg);
+    background-size: cover;
+}
+
+.main-section {
+    margin: 0 auto;
+    margin-top: 190px;
+    padding: 0;
+}
+.modal-content {
+    background-color: #3b4652;
+    padding: 0 18px;
+    box-shadow: 0px 0px 3px #848484 ;
+
+}
+
+.user-img {
+    margin-top: -50px ;
+    margin-bottom: 35px;
+}
+
+.user-img img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #848484 ;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group input {
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+    padding-left: 54px;
+}
+.form-group i {
+    position: absolute;
+    right: 250px;
+    top: 12px;
+}
+
+#lock {
+    position: absolute;
+    right: 250px;
+    top: 72px;
+    
+}
+
+#btn1 {
+    background-color: #fff;
+}
+
+.forgot {
+    padding: 20px;
+}
+
+.forgot a {
+    color: #fff;
+}
+
+.footer-copyright {
+    background-color: #333;
+    position:fixed ;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+}
+.footer-copyright a {
+    color: #fff;
+}
+
