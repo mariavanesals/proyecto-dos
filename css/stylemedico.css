@@ -1,0 +1,21 @@
+.body-medico{
+    background-image: url('../img/foto-medico.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navTop{
+    border: 1px black solid;
+}
+
+.navbar-brand{
+    margin-left: 150px;
+}
+
+.nav2{
+    margin-right: 150px;
+}
+
+.nav-item {
+    font-size: small;
+}

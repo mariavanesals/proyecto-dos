@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- jQuery library -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="css/login-medico.css">
+    </head>
+    <body class="text-center body-medico">
+        <div class="container">
+            <div class="row" style="justify-content: center;">
+                <div class="col-md-6 col-md-offset-3">
+                    <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-register" role="tab" aria-controls="nav-profile" aria-selected="false">Registrar</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Usuario" value="">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                <label for="remember"> Recordarme</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="row" style="justify-content: center;">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Ingresar">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Olvidó su contraseña?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <form id="register-form" action="https://phpoll.com/register/process" method="post" role="form">
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Usuario" value="">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Correo" value="">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                            </div>
+                            <div class="form-group">
+                                <div class="row" style="justify-content: center;">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Registrar">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                <!-- <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-login">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <a href="#" class="active" id="login-form-link">Login</a>
+                                </div>
+                                <div class="col-xs-6">
+                                    <a href="#" id="register-form-link">Register</a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                                        <div class="form-group">
+                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                            <label for="remember"> Remember Me</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-sm-offset-3">
+                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="text-center">
+                                                        <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                                        <div class="form-group">
+                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-sm-offset-3">
+                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </body>
+</html>
+
+
