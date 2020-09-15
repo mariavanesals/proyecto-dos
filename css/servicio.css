@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.h2 {
+    color: rgb(24, 24, 121); 
+    font-size: 2rem;
+}
+.h3 {
+    color: white ;
+    font-size: 1.8rem;
+}
+.p2 {
+    color: rgb(24, 24, 121); 
+}
+.p3 {
+    color: white ;
+}

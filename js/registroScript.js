@@ -16,7 +16,7 @@ function checkInputs() {
 	const valorContrasena = password.value.trim();
 	const valorContrasena2 = password2.value.trim();
 	let dato = JSON.parse(localStorage.getItem("users"))
-	
+
 	if(valorUsuario === '') {
 		mostrarError(usuario, 'El campo no puede quedar vacio');
 	} else {
@@ -44,14 +44,24 @@ function checkInputs() {
 	} else{
 		mostrarExito(password2);
 	}
+	
+	function checkUserName(){
+		for(i=0;i<dato.length-1;i++){
+			if(valorUsuario == dato[i].username){
+				mostrarError(usuario, "el usuario ingresado esta en uso")
+				return false
+			} 
+			return true
+		}
+		
+	}
 
 	
-	
-	
-
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '') {
-		almacenar()
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && checkUserName()) {
+		alert("se almaceno")
+		/*almacenar()
 		window.location="registroListo.html"
+		*/
 	}
      
 }

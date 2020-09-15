@@ -37,6 +37,7 @@ const valorUsuario = usuarioSeleccionado.value.trim();
 
 function seleccionarUsuario(baseDeDatos){
   if(valorUsuario === dato[i].username){
+    window.location.href = "medico.html"
 
   } else if(valorUsuario === dato[i].username && valorcontrasena === dato[i].password){
     window.location.href = "medico.html"

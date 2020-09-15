@@ -29,7 +29,7 @@ function verificarLogin(dato, username) {
     
     for (i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorcontrasena){
-        window.location.href = "admin.html"    
+        window.location.href = "../admin.html"    
       } else if (dato[i].username == valorUsuario && dato[i].password == valorcontrasena && dato[i].permission == "no"){
         alert("tu cuenta tiene que ser verificada, aguarda 24hr")
       } else if (dato[i].username == valorUsuario && dato[i].password == valorcontrasena && dato[i].permission == "si"){
