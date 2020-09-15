@@ -11,11 +11,11 @@ form.addEventListener('submit', e => {
 });
 
 function checkInputs() {
-	// trim to remove the whitespaces
 	const valorUsuario = usuario.value.trim();
 	const valorEmail = email.value.trim();
 	const valorContrasena = password.value.trim();
 	const valorContrasena2 = password2.value.trim();
+	let dato = JSON.parse(localStorage.getItem("users"))
 	
 	if(valorUsuario === '') {
 		mostrarError(usuario, 'El campo no puede quedar vacio');
@@ -43,19 +43,46 @@ function checkInputs() {
 		mostrarError(password2, 'Las contrasenas no coinciden');
 	} else{
 		mostrarExito(password2);
-    }
-    
-    if(valorUsuario !== '' && valorEmail !== '') {
-        window.location.href = '../pacientes.html';
-        let user = Array{{
-            username: valorUsuario.value,
-            email: valorEmail.value,
-            password: valorContrasena.value
-        } 
-    };
+	}
 
-    
+	
+	
+	
+
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '') {
+		almacenar()
+		window.location="registroListo.html"
+	}
+     
 }
+
+function almacenar(){
+	if(localStorage.getItem("users")){
+		let users1 = JSON.parse(localStorage.getItem("users"));
+		users1.push(
+			{
+				username: usuario.value,
+				password: password.value,
+				mail: email.value,
+				permission: "no"
+				}
+		)
+		localStorage.setItem("users",JSON.stringify(users1));
+	} else {
+		let users = Array(
+			{
+			username: usuario.value,
+			password: password.value,
+			mail: email.value,
+			permission: "no"
+			}
+		);
+		localStorage.setItem('users',JSON.stringify(users));
+	}	
+}
+
+
+
 
 function mostrarError(input, message) {
 	const formControl = input.parentElement;
@@ -72,18 +99,5 @@ function mostrarExito(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

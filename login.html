@@ -53,17 +53,19 @@
                     <div class="col-12 user-img">
                         <img src="img/logo.jpg">
                     </div>
-                    <form class="col-12">
+                    <form class="col-12" id="form">
                         <div class="form-group">
                             <i class="fa fa-user icon">
                             </i>
-                            <input type="text" class="form-control"
+                            <input type="text" id="usuario" class="form-control"
                                 placeholder="Ingresar Usuario">
+                            <small></small>
                         </div>
                         <div class="form-group">
                             <i id="lock" class="fas fa-lock"></i>
-                            <input type="password" class="form-control"
+                            <input type="password" id="contrasena" class="form-control"
                                 placeholder="Ingresar Constrasena">
+                                <small></small>
                         </div>
                         <button id="btn1" type="submit" class="btn"><i
                                 class="fas
@@ -75,5 +77,6 @@
                 </div> <!--End of Modal Content-->
             </div>
         </div>
+        <script src="js/login.js"></script>
     </body>
 </html>
