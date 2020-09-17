@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registroMedico.css">
+    <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Crear cuenta</h2>
+        </div>
+        <div class="container">
+            <form id="form" class="form">
+                <div class="form-control">
+                    <label for="nombreCompleto">Nombre Completo</label>
+                    <input type="text" placeholder="Ingrese nombre" id="nombreCompleto"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensaje de error</small>
+                </div>
+                <div class="form-control">
+                    <label for="disciplina">Disciplina</label>
+                    <input type="text" placeholder="Ingrese disciplina" id="disciplina" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensaje de error</small>
+                </div>
+                <div class="form-control">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" placeholder="Ingresar Usuario" id="usuario"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Email</small>
+                </div>
+                <div class="form-control">
+                    <label for="usuario">Email</label>
+                    <input type="email" placeholder="Ingrese mail" id="email" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensaje de error</small>
+                </div>
+                <div class="form-control">
+                    <label for="usuario">Contrasena</label>
+                    <input type="password" placeholder="Ingresar contrasena" id="contrasena"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensaje de error</small>
+                </div>
+                <div class="form-control">
+                    <label for="usuario">Repetir Contrasena</label>
+                    <input type="password" placeholder="Repetir contrasena" id="contrasena2"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensaje de error</small>
+                </div>
+                <button id="Enviar">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/registroMedico.js"></script>
+
+    
+</body>
+</html>
