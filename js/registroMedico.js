@@ -5,21 +5,24 @@ const disciplina = document.getElementById('disciplina')
 const email = document.getElementById('email');
 const password = document.getElementById('contrasena');
 const password2 = document.getElementById('contrasena2');
-const valorNombreCompleto = nombreCompleto.value.trim();
-const valorDisciplina = disciplina.value.trim();
-const valorUsuario = usuario.value.trim();
-const valorEmail = email.value.trim();
-const valorContrasena = password.value.trim();
-const valorContrasena2 = password2.value.trim();
+
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
-	
+
 	checkInputs();
 });
 
 function checkInputs() {
-
+	const valorNombreCompleto = nombreCompleto.value.trim();
+	const valorDisciplina = disciplina.value.trim();
+	const valorUsuario = usuario.value.trim();
+	const valorEmail = email.value.trim();
+	const valorContrasena = password.value.trim();
+	const valorContrasena2 = password2.value.trim();
+	console.log(valorNombreCompleto)
+	console.log(valorContrasena)
+	console.log(valorUsuario)
 
     let dato = JSON.parse(localStorage.getItem("doctors"))
     if(valorNombreCompleto === '') {
@@ -63,6 +66,7 @@ function checkInputs() {
 	}
 	
 	function checkUserName(){
+		let dato = JSON.parse(localStorage.getItem("doctors"))
 		for(i=0;i<dato.length-1;i++){
 			if(valorUsuario == dato[i].username){
 				mostrarError(usuario, "el usuario ingresado esta en uso")
@@ -74,7 +78,7 @@ function checkInputs() {
 	}
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' && checkUserName()) {
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' & checkUserName() ) {
 		alert("almacenado")
 		almacenar()
 		window.location="registroListo.html"
@@ -90,8 +94,8 @@ function almacenar(){
 				username: usuario.value,
 				password: password.value,
 				mail: email.value,
-				fullname: valorNombreCompleto.value,
-				discipline: valorDisciplina.value,
+				fullname: nombreCompleto.value,
+				discipline: disciplina.value,
 				permission: "no"
 				}
 		)
@@ -102,8 +106,8 @@ function almacenar(){
 			username: usuario.value,
 			password: password.value,
 			mail: email.value,
-			fullname: valorNombreCompleto.value,
-			discipline: valorDisciplina.value,
+			fullname: nombreCompleto.value,
+			discipline: disciplina.value,
 			permission: "no"
 			}
 		);

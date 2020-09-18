@@ -1,8 +1,7 @@
 let users = JSON.parse(localStorage.getItem("users"));
-let table = document.querySelector("table");
+let table = document.getElementById("table1");
 table.setAttribute("class", "tabla");
 let data = Object.keys(users[0]);
-console.log(data)
 
 generateTable(table, users);
 generateTableHead(table,data);
@@ -32,22 +31,17 @@ function generateTable(table, data,) {
 
 const usuarioSeleccionado = document.getElementById("fname")
 const valorUsuario = usuarioSeleccionado.value.trim();
-console.log(valorUsuario)
 
-console.log(users)
 
 function seleccionarUsuario(users){
   users = JSON.parse(localStorage.getItem("users"));
   const usuarioSeleccionado = document.getElementById("fname")
   const valorUsuario = usuarioSeleccionado.value.trim();
-  console.log(valorUsuario)
   for (i=0;i<users.length;i++){
     if (users[i].username == valorUsuario){
       users[i].permission = "si"
-      console.log(users)
       localStorage.setItem('users',JSON.stringify(users));
       window.location="admin.html";
-      console.log(users[i])   
     }
   }
 }

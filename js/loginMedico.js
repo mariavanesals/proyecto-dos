@@ -9,12 +9,12 @@ form.addEventListener("submit", e => {
     verificarLogin();
 })
 
-let dato = JSON.parse(localStorage.getItem("users"))
+let dato = JSON.parse(localStorage.getItem("doctors"))
 const valorUsuario = usernameInput.value.trim();
 const valorContrasena = contrasenaInput.value.trim();
 
-function verificarLogin(dato,valorUsuario) {
-    var dato = JSON.parse(localStorage.getItem("users"))
+function verificarLogin() {
+    let dato = JSON.parse(localStorage.getItem("doctors"))
     const valorUsuario = usernameInput.value.trim();
     const valorContrasena = contrasenaInput.value.trim();
     for (i=0;i<dato.length;i++){
