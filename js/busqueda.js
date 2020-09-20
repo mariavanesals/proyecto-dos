@@ -3,14 +3,11 @@ console.log(busqueda)
 
 document.getElementById("busquedaInput").placeholder = busqueda;
 
-let valorBusqueda = busqueda.value;
-localStorage.setItem("valorBusqueda",JSON.stringify(valorBusqueda))
-
-if(valorBusqueda == "cardiologo" || valorBusqueda || "cardiologia" || valorBusqueda || "corazon"){
+if(busqueda == "cardiologo" || busqueda == "cardiologia" || busqueda == "corazon"){
         tablaCardiologos()
-    } else if (valorBusqueda == "dermatologo" || valorBusqueda || "dermatologia" || valorBusqueda || "piel"){
+    } else if (busqueda == "dermatologo" || busqueda == "dermatologia" || busqueda == "piel"){
         tablaDermatologos()
-    } else if (valorBusqueda == "dentista" || valorBusqueda || "odontologia" || valorBusqueda || "caries"){
+    } else if (busqueda == "dentista" || busqueda == "odontologia" || busqueda == "caries"){
         tablaDentistas()
     }   else {
     alert("no se encontro resultados de su busqueda")
