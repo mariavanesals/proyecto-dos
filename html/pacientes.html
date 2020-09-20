@@ -21,10 +21,10 @@
               </a>
             <ul class="nav2 nav navbar-nav ml-auto w-100 justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Soy paciente</a>
+                    <a class="nav-link" id="nombreUsuario" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Soy doctor</a>
+                    <a class="nav-link" href="home2.html">Salir</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Como funciona</a>
@@ -52,14 +52,14 @@
                         <p>Saca un turno con un doctor local</p>
                     </div>
                     <div>
-                        <form>
+                        <form id="form">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Ingrese especialidad">
+                                <input id="busqueda" type="text" class="form-control" placeholder="Ingrese especialidad">
                                 <div class="input-group-append">
-                                  <span class="input-group-text">buscar</span>
+                                  <button type="submit" class="input-group-text btn">buscar</button>
                                 </div>
                               </div>
-                            </form>
+                        </form>
                     </div>
                 </div>
         </div>
@@ -156,7 +156,7 @@
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
     </div>
-    
+    <script src="../js/pacientes.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

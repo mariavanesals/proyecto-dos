@@ -20,9 +20,7 @@ function checkInputs() {
 	const valorEmail = email.value.trim();
 	const valorContrasena = password.value.trim();
 	const valorContrasena2 = password2.value.trim();
-	console.log(valorNombreCompleto)
-	console.log(valorContrasena)
-	console.log(valorUsuario)
+
 
     let dato = JSON.parse(localStorage.getItem("doctors"))
     if(valorNombreCompleto === '') {
@@ -65,8 +63,12 @@ function checkInputs() {
 		mostrarExito(password2);
 	}
 	
+	dato = JSON.parse(localStorage.getItem("doctors"))
+	console.log(dato)
+
 	function checkUserName(){
 		let dato = JSON.parse(localStorage.getItem("doctors"))
+		console.log(dato)
 		for(i=0;i<dato.length-1;i++){
 			if(valorUsuario == dato[i].username){
 				mostrarError(usuario, "el usuario ingresado esta en uso")
@@ -78,10 +80,9 @@ function checkInputs() {
 	}
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' & checkUserName() ) {
-		alert("almacenado")
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' & checkUserName()) {
 		almacenar()
-		window.location="registroListo.html"
+		window.location="../html/registroMedico.html"
 		
 	}  
 }
@@ -99,7 +100,7 @@ function almacenar(){
 				permission: "no"
 				}
 		)
-		localStorage.setItem("doctors",JSON.stringify(doctors));
+		localStorage.setItem("doctors",JSON.stringify(doctors1));
 	} else {
 		let doctors = Array(
 			{
