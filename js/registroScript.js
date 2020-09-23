@@ -59,7 +59,7 @@ function checkInputs() {
 	
     if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== ''  && checkUserName()) {
 		almacenar()
-		window.location="registroListo.html"
+		window.location="html/home2.html"
 		
 	}
      

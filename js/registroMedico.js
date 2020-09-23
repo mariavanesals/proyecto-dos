@@ -63,8 +63,7 @@ function checkInputs() {
 		mostrarExito(password2);
 	}
 	
-	dato = JSON.parse(localStorage.getItem("doctors"))
-	console.log(dato)
+
 
 	function checkUserName(){
 		let dato = JSON.parse(localStorage.getItem("doctors"))

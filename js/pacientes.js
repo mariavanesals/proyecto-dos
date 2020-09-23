@@ -11,7 +11,7 @@ form.addEventListener("submit", e =>{
 
 function buscar(){
     let valorBusqueda = busqueda.value.trim();
-    if(valorBusqueda == "cardiologo" || valorBusqueda == "cardiologia" || valorBusqueda == "corazon"){
+    if(valorBusqueda == "neurocirujano" || valorBusqueda == "neurologo" || valorBusqueda == "cerebro"){
         guardarBusqueda()
         window.location.href = "busqueda.html"
     } else if (valorBusqueda == "dermatologo" || valorBusqueda == "dermatologia" || valorBusqueda == "piel"){
