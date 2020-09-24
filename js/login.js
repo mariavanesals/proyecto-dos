@@ -16,7 +16,6 @@ function verificarLogin() {
     let dato = JSON.parse(localStorage.getItem("users"))
 
     const valorUsuario = usernameInput.value.trim();
-    console.log(valorUsuario)
     const valorcontrasena = contrasenaInput.value.trim();
     let i;
     for (i=0;i<dato.length;i++){
