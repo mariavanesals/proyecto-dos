@@ -1,8 +1,6 @@
 let table = document.getElementById("table1");
 
 let busqueda = JSON.parse(localStorage.getItem("valorBusqueda"))
-console.log(table)
-console.log("hola")
 table.setAttribute("class", "tabla");
 let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 
@@ -14,11 +12,8 @@ let doctores = JSON.parse(localStorage.getItem("doctors"))
 let dentistas = doctores.filter(doctores => doctores.disciplina === "dentista" & doctores.permiso === "si");
 let neurocirujanos = doctores.filter(doctores => doctores.disciplina === "neurocirujano" & doctores.permiso === "si");
 let dermatologos = doctores.filter(doctores => doctores.disciplina === "dermatologo" & doctores.permiso === "si");
-console.log(dentistas)
 
 
-let data = Object.keys(dentistas[0]);
-console.log(data)
 
 if(busqueda == "neurocirujano" || busqueda == "neurologia" || busqueda == "cerebro"){
         tablaNeurocirujano()
@@ -49,7 +44,7 @@ function tablaNeurocirujano(){
     generateTableHead(table,data);
 }
 
-function generateTableHead(table) {
+function generateTableHead(table,data) {
     let thead = table.createTHead();
     let row = thead.insertRow();
 
@@ -91,6 +86,8 @@ let buscarTurno = document.getElementById("abrirModalTurno")
 
 buscarTurno.addEventListener("click", e => {
     e.preventDefault();
+    let modal = document.getElementById("modalTurno")
+    modal.style.display = "none"
 
     mostrarModalTurno()
 })
@@ -106,6 +103,55 @@ function mostrarModalTurno(){
     }
 
 }
+
+let botonReservar = document.getElementById("botonReservar")
+
+botonReservar.addEventListener("click", e => {
+    e.preventDefault();
+
+    ReservarTurno()
+})
+
+function ReservarTurno(){
+    const fecha = document.getElementById("fechaCalendario")
+    const hora = document.getElementById("hora")
+    const motivoConsulta = document.getElementById("motivoConsulta")
+    const fechaValue = fecha.value
+    const horaValue = hora.value
+    const motivoConsultaValue = motivoConsulta.value
+    let doctorSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
+    console.log(fechaValue)
+    console.log(horaValue)
+    console.log(motivoConsultaValue)
+    console.log(nombreUsuario)
+    console.log(doctorSeleccionado)
+
+    if(localStorage.getItem("TurnosConfirmados")){
+		let TurnosConfirmados1 = JSON.parse(localStorage.getItem("TurnosConfirmados"));
+		TurnosConfirmados1.push(
+			{
+				paciente: nombreUsuario,
+				fecha: fechaValue,
+				hora: horaValue,
+				consulta: motivoConsultaValue,
+				}
+		)
+		localStorage.setItem("TurnosConfirmados",JSON.stringify(TurnosConfirmados1));
+	} else {
+		let TurnosConfirmados = Array(
+			{
+				paciente: nombreUsuario,
+				fecha: fechaValue,
+				hora: horaValue,
+				consulta: motivoConsultaValue,
+			}
+		);
+		localStorage.setItem('TurnosConfirmados',JSON.stringify(TurnosConfirmados));
+	}
+}
+
+
+
 
 seleccionarFila()
 
@@ -127,7 +173,6 @@ function seleccionarFila() {
 
             doctorSeleccionado = rowSelected.cells[0].innerHTML;
             localStorage.setItem("doctorSeleccionado",JSON.stringify(doctorSeleccionado))
-            console.log(doctorSeleccionado)
         }
     }
 }
@@ -142,13 +187,12 @@ function mostrarModal(){
     }
 
     let medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
-    console.log(medicoSeleccionado)
 
     let infoMedico = doctores.filter(doctores => doctores.nombreCompleto === medicoSeleccionado);
     let especialidad = infoMedico[0].disciplina
     let turno = infoMedico[0].horario
     let sucursal = infoMedico[0].sucursal
-    console.log(especialidad)
+
     medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
     document.getElementById("nombreCompleto").innerHTML = medicoSeleccionado;
     document.getElementById("especialidad").innerHTML = especialidad;

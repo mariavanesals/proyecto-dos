@@ -67,7 +67,7 @@ function seleccionarUsuario(){
     if (doctors[i].usuario == MedicoAHabilitarValue){
       doctors[i].permiso = "si"
       localStorage.setItem('doctors',JSON.stringify(doctors));
-      window.location="admin.html";
+      window.location="adminMedico.html";
       console.log(doctors[i])   
     }
   }
