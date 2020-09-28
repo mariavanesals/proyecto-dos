@@ -19,11 +19,12 @@ function verificarLogin() {
     const valorContrasena = contrasenaInput.value.trim();
     for (i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorContrasena){
-        window.location.href = "../admin.html"    
+        window.location.href = "../html/admin.html"    
       } else if (dato[i].username == valorUsuario && dato[i].password == valorContrasena && dato[i].permission == "no"){
         alert("tu cuenta tiene que ser verificada, aguarda 24hr")
       } else if (dato[i].username == valorUsuario && dato[i].password == valorContrasena && dato[i].permission == "si"){
-        window.location.href = "medico.html"
+        LoginMedico()
+        window.location.href = "../html/medico.html"
       }     
     }
   }
@@ -41,3 +42,13 @@ function mostrarExito(input) {
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
 }  
+
+function LoginMedico(){
+	if(localStorage.getItem("medicoLogueado")){
+    let medicoLogueado1 = usernameInput.value
+    localStorage.setItem('medicoLogueado',JSON.stringify(medicoLogueado1));
+	} else {
+		let usuarioLogueado = usernameInput.value
+    localStorage.setItem('medicoLogueado',JSON.stringify(usuarioLogueado));
+  }
+}

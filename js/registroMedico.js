@@ -5,6 +5,12 @@ const disciplina = document.getElementById('disciplina')
 const email = document.getElementById('email');
 const password = document.getElementById('contrasena');
 const password2 = document.getElementById('contrasena2');
+const sucursal = document.getElementById('sucursal');
+const horario = document.getElementById('horario');
+const valorSucursal = sucursal.value
+const valorHorario = horario.value
+console.log(valorSucursal)
+console.log(valorHorario)
 
 
 form.addEventListener('submit', e => {
@@ -20,6 +26,8 @@ function checkInputs() {
 	const valorEmail = email.value.trim();
 	const valorContrasena = password.value.trim();
 	const valorContrasena2 = password2.value.trim();
+
+	
 
 
     let dato = JSON.parse(localStorage.getItem("doctors"))
@@ -81,7 +89,7 @@ function checkInputs() {
 	
     if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' & checkUserName()) {
 		almacenar()
-		window.location="../html/registroMedico.html"
+		window.location="../html/registroListo.html"
 		
 	}  
 }
@@ -96,7 +104,9 @@ function almacenar(){
 				mail: email.value,
 				fullname: nombreCompleto.value,
 				discipline: disciplina.value,
-				permission: "no"
+				permission: "no",
+				horario: horario.value,
+				sucursal: sucursal.value
 				}
 		)
 		localStorage.setItem("doctors",JSON.stringify(doctors1));
@@ -108,7 +118,9 @@ function almacenar(){
 			mail: email.value,
 			fullname: nombreCompleto.value,
 			discipline: disciplina.value,
-			permission: "no"
+			permission: "no",
+			horario: horario.value,
+			sucursal: sucursal.value
 			}
 		);
 		localStorage.setItem('doctors',JSON.stringify(doctors));

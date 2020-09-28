@@ -1,5 +1,8 @@
-let busqueda = JSON.parse(localStorage.getItem("valorBusqueda"))
 let table = document.getElementById("table1");
+
+let busqueda = JSON.parse(localStorage.getItem("valorBusqueda"))
+console.log(table)
+console.log("hola")
 table.setAttribute("class", "tabla");
 let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 
@@ -8,9 +11,10 @@ document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 document.getElementById("busquedaInput").placeholder = busqueda;
 
 let doctores = JSON.parse(localStorage.getItem("doctors"))
-let dentistas = doctores.filter(doctores => doctores.discipline === "dentista");
-let neurocirujanos = doctores.filter(doctores => doctores.discipline === "neurocirujano");
-let dermatologos = doctores.filter(doctores => doctores.discipline === "dermatologo");
+let dentistas = doctores.filter(doctores => doctores.discipline === "dentista" & doctores.permission === "si");
+let neurocirujanos = doctores.filter(doctores => doctores.discipline === "neurocirujano" & doctores.permission === "si");
+let dermatologos = doctores.filter(doctores => doctores.discipline === "dermatologo" & doctores.permission === "si");
+console.log(dentistas)
 
 
 let data = Object.keys(dentistas[0]);
@@ -77,17 +81,7 @@ function generateTable(table, data) {
 
 
 
-function mostrarModal(){
-    let modal = document.getElementById("modalMedico1")
-    let botonCerrar = document.getElementById("cerrarModal")
 
-    modal.style.display = "block"
-    botonCerrar.onclick = function(){
-        modal.style.display = "none"
-    }
-
-    
-}
 
 const input = document.getElementById('fechaCalendario');
 const datepicker = new TheDatepicker.Datepicker(input);
@@ -106,53 +100,23 @@ function mostrarModalTurno(){
     let cancelar = document.getElementById("cancelar")
 
     modal.style.display = "block"
+
     cancelar.onclick = function(){
         modal.style.display = "none"
     }
 
 }
 
-let botonReservar = document.getElementById("botonReservar")
+seleccionarFila()
 
-botonReservar.addEventListener("click", e => {
-    e.preventDefault()
-
-    almacenarTurno()
-})
-
-
-function almacenarTurno(){
-    const fechaCalendario = document.getElementById("fechaCalendario")
-    const hora = document.getElementById("hora")
-    const motivoConsulta = document.getElementById("motivoConsulta")
-    const doctor = JSON.parse(localStorage.getItem("doctorSeleccionado"))
-
-
-    const valorFechaCalendario = fechaCalendario.value;
-    const valorHora = hora.value;
-    const valorMotivoConsulta = motivoConsulta.value;
-
-    console.log(valorFechaCalendario)
-    console.log(valorHora)
-    console.log(valorMotivoConsulta)
-    console.log(nombreUsuario)
-    console.log(doctor)
-}
-
-highlight_row()
-
-function highlight_row() {
+function seleccionarFila() {
     var table = document.getElementById('table1');
     var cells = table.getElementsByTagName('td');
 
     for (var i = 0; i < cells.length; i++) {
-        // Take each cell
         var cell = cells[i];
-        // do something on onclick event for cell
         cell.onclick = function () {
-            // Get the row id where the cell exists
             var rowId = this.parentNode.rowIndex;
-
             var rowsNotSelected = table.getElementsByTagName('tr');
             for (var row = 0; row < rowsNotSelected.length; row++) {
                 rowsNotSelected[row].style.backgroundColor = "";
@@ -166,5 +130,33 @@ function highlight_row() {
             console.log(doctorSeleccionado)
         }
     }
+}
 
+function mostrarModal(){
+    let modal = document.getElementById("modalMedico1")
+    let botonCerrar = document.getElementById("cerrarModal")
+
+    modal.style.display = "block"
+    botonCerrar.onclick = function(){
+        modal.style.display = "none"
+    }
+
+    let medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
+    console.log(medicoSeleccionado)
+
+    let infoMedico = doctores.filter(doctores => doctores.fullname === medicoSeleccionado);
+    let especialidad = infoMedico[0].discipline
+    let turno = infoMedico[0].horario
+    let sucursal = infoMedico[0].sucursal
+    console.log(especialidad)
+    medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
+    document.getElementById("nombreCompleto").innerHTML = medicoSeleccionado;
+    document.getElementById("especialidad").innerHTML = especialidad;
+    document.getElementById("sobreMi").innerHTML = "Atiendo a la " + turno + " en la sucursal de " + sucursal;
+
+    botonCerrar.onclick = function(){
+        modal.style.display = "none"
+    }
+
+    
 }

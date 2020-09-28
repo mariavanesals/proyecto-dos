@@ -26,7 +26,9 @@ function verificarLogin() {
       } else if (dato[i].username == valorUsuario && dato[i].password == valorcontrasena && dato[i].permission == "si"){
         window.location.href = "pacientes.html"
         LoginUsuario()
-      }     
+      } else {
+        alert("nombre o usuario incorrecto")
+      }
     }
   }
 

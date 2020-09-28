@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <script src="../js/modalScript.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/tabla.css">  
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modalStyle.css">
+    <link href="../css/calendario.css" rel="stylesheet" />
+
+    <title>Resultado de busqueda</title>
+</head>
+<body>
+    <nav class="navTop navbar navbar-light navbar-expand-md bg-faded justify-content-center">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            San Remo
+          </a>
+        <ul class="nav2 nav navbar-nav ml-auto w-100 justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" id="nombreUsuario" href="#"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="home2.html">Salir</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline">
+                    <div class="input-group">                    
+                        <input type="text" id="busquedaInput" class="form-control" placeholder="">
+                        <div class="input-group-append">
+                            <button type="button" id="busquedaInput" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <table id="table1">
+    </table>
+    
+    <div class="modalMedico" id="modalMedico1">
+        <div class="modal">
+            <img src="img/profile.jpg" alt="">
+            <div class="close"></div>
+        </div>
+        
+        <div class="container">
+            <div class="card">
+                <div class="header">
+                    <div class="hamburger-menu">
+                        <div class="center"></div>
+                    </div>
+                    <a href="#" class="mail">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <div class="main">
+                        <div class="image">
+                            <div class="hover">
+                                <i class="fas fa-camera fa-2x"></i>
+                            </div>
+                        </div>
+                        <h3 class="name">Ferrer Gonzalo Facundo</h3>
+                        <h3 class="sub-name">neurocirujano</h3>
+                    </div>
+                </div>
+    
+                <div class="content">
+                    <div class="left">
+                        <div class="about-container">
+                            <h3 class="title">Sobre mi</h3>
+                            <p class="text">Recibido de la UNT con 15 anos de trayectoria</p>
+                        </div>
+                        <div class="icons-container">
+                            <a href="#" class="icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="icon">
+                                <i class="fab fa-google-plus-g"></i>
+                            </a>
+                            <a href="#" class="icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="buttons-wrap">
+                            <div class="follow-wrap" id="abrirModalTurno">
+                                <a href="#" class="follow">Sacar turno</a>
+                            </div>
+                            <div class="share-wrap" id="cerrarModal">
+                                <a  href="#" class="share">Cerrar</a>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalTurno">
+        <form class="formularioTurno">
+            <div class="form-group">
+                <label>Saque un turno!</label>
+            </div>
+            <div class="form-group">
+              <label>Dia y Horario</label>
+              <input type="text" class="form-control" id="fechaCalendario">
+            </div>
+            <div class="form-group">
+                <label>Horario</label>
+                <select id="hora">
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                  </select>
+            </div>
+            <div class="form-group">
+              <label>Motivo de consulta</label>
+              <textarea class="form-control" id="motivoConsulta"></textarea>
+            </div>
+            <div class="buttons-wrap">
+                <div class="follow-wrap">
+                    <button type="submit" class="follow" id="botonReservar">Reservar Turno</button>
+                </div>
+                <div class="share-wrap">
+                    <button type="submit" class="share" id="cancelar">Cancelar</button>
+                </div>
+            </div>
+          </form>
+    </div>
+
+    <script src="../js/calendario.js"></script>
+    <script src="../js/busqueda.js"></script>
+</body>
+</html>
