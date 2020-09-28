@@ -30,7 +30,6 @@ function checkInputs() {
 	
 
 
-    let dato = JSON.parse(localStorage.getItem("doctors"))
     if(valorNombreCompleto === '') {
 		mostrarError(nombreCompleto, 'El campo no puede quedar vacio');
 	} else {
@@ -73,21 +72,21 @@ function checkInputs() {
 	
 
 
-	function checkUserName(){
+	/*function checkUserName(){
 		let dato = JSON.parse(localStorage.getItem("doctors"))
 		console.log(dato)
 		for(i=0;i<dato.length-1;i++){
-			if(valorUsuario == dato[i].username){
+			if(valorUsuario == dato[i].usuario){
 				mostrarError(usuario, "el usuario ingresado esta en uso")
 				return false
 			} 
 			return true
 		}
 		
-	}
+	}*/
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' & checkUserName()) {
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' /*& checkUserName()*/) {
 		almacenar()
 		window.location="../html/registroListo.html"
 		
@@ -99,12 +98,12 @@ function almacenar(){
 		let doctors1 = JSON.parse(localStorage.getItem("doctors"));
 		doctors1.push(
 			{
-				username: usuario.value,
-				password: password.value,
+				usuario: usuario.value,
+				contrasena: password.value,
 				mail: email.value,
-				fullname: nombreCompleto.value,
-				discipline: disciplina.value,
-				permission: "no",
+				nombreCompleto: nombreCompleto.value,
+				disciplina: disciplina.value,
+				permiso: "no",
 				horario: horario.value,
 				sucursal: sucursal.value
 				}
@@ -113,14 +112,14 @@ function almacenar(){
 	} else {
 		let doctors = Array(
 			{
-			username: usuario.value,
-			password: password.value,
-			mail: email.value,
-			fullname: nombreCompleto.value,
-			discipline: disciplina.value,
-			permission: "no",
-			horario: horario.value,
-			sucursal: sucursal.value
+				usuario: usuario.value,
+				contrasena: password.value,
+				mail: email.value,
+				nombreCompleto: nombreCompleto.value,
+				disciplina: disciplina.value,
+				permiso: "no",
+				horario: horario.value,
+				sucursal: sucursal.value
 			}
 		);
 		localStorage.setItem('doctors',JSON.stringify(doctors));

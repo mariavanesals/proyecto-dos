@@ -11,9 +11,9 @@ document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 document.getElementById("busquedaInput").placeholder = busqueda;
 
 let doctores = JSON.parse(localStorage.getItem("doctors"))
-let dentistas = doctores.filter(doctores => doctores.discipline === "dentista" & doctores.permission === "si");
-let neurocirujanos = doctores.filter(doctores => doctores.discipline === "neurocirujano" & doctores.permission === "si");
-let dermatologos = doctores.filter(doctores => doctores.discipline === "dermatologo" & doctores.permission === "si");
+let dentistas = doctores.filter(doctores => doctores.disciplina === "dentista" & doctores.permiso === "si");
+let neurocirujanos = doctores.filter(doctores => doctores.disciplina === "neurocirujano" & doctores.permiso === "si");
+let dermatologos = doctores.filter(doctores => doctores.disciplina === "dermatologo" & doctores.permiso === "si");
 console.log(dentistas)
 
 
@@ -54,7 +54,7 @@ function generateTableHead(table) {
     let row = thead.insertRow();
 
     for (let key of data) {
-        if(key == "fullname" || key == "discipline"){
+        if(key == "nombreCompleto" || key == "disciplina"){
         let th = document.createElement("th");
         let text = document.createTextNode(key);
         th.appendChild(text);
@@ -70,7 +70,7 @@ function generateTable(table, data) {
       row.addEventListener("click", () => {mostrarModal()})
 
       for (key in element) {
-        if(key == "fullname" || key == "discipline"){
+        if(key == "nombreCompleto" || key == "disciplina"){
         let cell = row.insertCell();
         let text = document.createTextNode(element[key]);
         cell.appendChild(text);
@@ -144,8 +144,8 @@ function mostrarModal(){
     let medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
     console.log(medicoSeleccionado)
 
-    let infoMedico = doctores.filter(doctores => doctores.fullname === medicoSeleccionado);
-    let especialidad = infoMedico[0].discipline
+    let infoMedico = doctores.filter(doctores => doctores.nombreCompleto === medicoSeleccionado);
+    let especialidad = infoMedico[0].disciplina
     let turno = infoMedico[0].horario
     let sucursal = infoMedico[0].sucursal
     console.log(especialidad)

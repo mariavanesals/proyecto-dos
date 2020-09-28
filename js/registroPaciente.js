@@ -15,7 +15,6 @@ function checkInputs() {
 	const valorEmail = email.value.trim();
 	const valorContrasena = password.value.trim();
 	const valorContrasena2 = password2.value.trim();
-	let dato = JSON.parse(localStorage.getItem("users"))
 
 	if(valorUsuario === '') {
 		mostrarError(usuario, 'El campo no puede quedar vacio');
@@ -46,8 +45,9 @@ function checkInputs() {
 	}
 	
 	function checkUserName(){
+		let dato = JSON.parse(localStorage.getItem("users"))
 		for(i=0;i<dato.length-1;i++){
-			if(valorUsuario == dato[i].username){
+			if(valorUsuario === dato[i].usuario){
 				mostrarError(usuario, "el usuario ingresado esta en uso")
 				return false
 			} 
@@ -57,9 +57,9 @@ function checkInputs() {
 	}
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== ''  && checkUserName()) {
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && checkUserName()) {
 		almacenar()
-		window.location="html/home2.html"
+		window.location="registroListo.html"
 		
 	}
      
@@ -70,20 +70,20 @@ function almacenar(){
 		let users1 = JSON.parse(localStorage.getItem("users"));
 		users1.push(
 			{
-				username: usuario.value,
-				password: password.value,
+				usuario: usuario.value,
+				contrasena: password.value,
 				mail: email.value,
-				permission: "no"
+				permiso: "no"
 				}
 		)
 		localStorage.setItem("users",JSON.stringify(users1));
 	} else {
 		let users = Array(
 			{
-			username: usuario.value,
-			password: password.value,
-			mail: email.value,
-			permission: "no"
+				usuario: usuario.value,
+				contrasena: password.value,
+				mail: email.value,
+				permiso: "no"
 			}
 		);
 		localStorage.setItem('users',JSON.stringify(users));

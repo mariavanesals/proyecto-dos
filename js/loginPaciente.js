@@ -20,11 +20,11 @@ function verificarLogin() {
     let i;
     for (i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorcontrasena){
-        window.location.href = "../admin.html"    
-      } else if (dato[i].username == valorUsuario && dato[i].password == valorcontrasena && dato[i].permission == "no"){
+        window.location.href = "../html/admin.html"    
+      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "no"){
         alert("tu cuenta tiene que ser verificada, aguarda 24hr")
-      } else if (dato[i].username == valorUsuario && dato[i].password == valorcontrasena && dato[i].permission == "si"){
-        window.location.href = "pacientes.html"
+      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "si"){
+        window.location.href = "../html/pacientes.html"
         LoginUsuario()
       } else {
         alert("nombre o usuario incorrecto")
@@ -58,3 +58,24 @@ function LoginUsuario(){
     localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado));
   }
 }
+
+const inputs = document.querySelectorAll(".input");
+
+
+function addcl(){
+	let parent = this.parentNode.parentNode;
+	parent.classList.add("focus");
+}
+
+function remcl(){
+	let parent = this.parentNode.parentNode;
+	if(this.value == ""){
+		parent.classList.remove("focus");
+	}
+}
+
+
+inputs.forEach(input => {
+	input.addEventListener("focus", addcl);
+	input.addEventListener("blur", remcl);
+});

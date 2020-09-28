@@ -19,10 +19,10 @@ function verificarLogin() {
     const valorContrasena = contrasenaInput.value.trim();
     for (i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorContrasena){
-        window.location.href = "../html/admin.html"    
-      } else if (dato[i].username == valorUsuario && dato[i].password == valorContrasena && dato[i].permission == "no"){
+        window.location.href = "../html/adminMedico.html"    
+      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorContrasena && dato[i].permiso == "no"){
         alert("tu cuenta tiene que ser verificada, aguarda 24hr")
-      } else if (dato[i].username == valorUsuario && dato[i].password == valorContrasena && dato[i].permission == "si"){
+      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorContrasena && dato[i].permiso == "si"){
         LoginMedico()
         window.location.href = "../html/medico.html"
       }     

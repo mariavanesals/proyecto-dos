@@ -1,6 +1,9 @@
 let users = JSON.parse(localStorage.getItem("users"));
+
 let table = document.getElementById("table1");
 table.setAttribute("class", "tabla");
+let usuarioLogueado = "Admin"
+document.getElementById("usuarioLogueado").innerHTML = usuarioLogueado
 let data = Object.keys(users[0]);
 
 generateTable(table, users);
@@ -29,19 +32,42 @@ function generateTable(table, data,) {
     }
 }
 
-const usuarioSeleccionado = document.getElementById("fname")
-const valorUsuario = usuarioSeleccionado.value.trim();
+seleccionarFila()
+
+function seleccionarFila() {
+    var table = document.getElementById('table1');
+    var cells = table.getElementsByTagName('td');
+
+    for (var i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        cell.onclick = function () {
+            var rowId = this.parentNode.rowIndex;
+            var rowsNotSelected = table.getElementsByTagName('tr');
+            for (var row = 0; row < rowsNotSelected.length; row++) {
+                rowsNotSelected[row].style.backgroundColor = "";
+                rowsNotSelected[row].classList.remove('selected');
+            }
+            var rowSelected = table.getElementsByTagName('tr')[rowId];
+            rowSelected.className += " selected";
+
+            usuarioAHabilitar = rowSelected.cells[0].innerHTML;
+            document.getElementById("nombreUsuario").innerHTML = usuarioAHabilitar
+
+        }
+    }
+}
 
 
 function seleccionarUsuario(users){
   users = JSON.parse(localStorage.getItem("users"));
-  const usuarioSeleccionado = document.getElementById("fname")
-  const valorUsuario = usuarioSeleccionado.value.trim();
+  const usuarioAHabilitar = document.getElementById("nombreUsuario")
+  const usuarioAHabilitarValue = usuarioAHabilitar.textContent
+  console.log(usuarioAHabilitar)
   for (i=0;i<users.length;i++){
-    if (users[i].username == valorUsuario){
-      users[i].permission = "si"
+    if (users[i].usuario == usuarioAHabilitarValue){
+      users[i].permiso = "si"
       localStorage.setItem('users',JSON.stringify(users));
-      window.location="admin.html";
+      window.location="adminPaciente.html";
     }
   }
 }

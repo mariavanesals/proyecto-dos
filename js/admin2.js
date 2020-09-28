@@ -2,6 +2,8 @@ let doctors = JSON.parse(localStorage.getItem("doctors"));
 let table2 = document.getElementById("table2");
 table2.setAttribute("class", "tabla");
 let data2 = Object.keys(doctors[0]);
+let usuarioLogueado = "Admin"
+document.getElementById("usuarioLogueado").innerHTML = usuarioLogueado
 
 
 generateTable(table2, doctors);
@@ -30,17 +32,40 @@ function generateTable(table2, data2,) {
     }
 }
 
-const usuarioSeleccionado2 = document.getElementById("dname")
-const valorUsuario2 = usuarioSeleccionado2.value.trim();
+seleccionarFila()
 
-function seleccionarUsuario2(){
+function seleccionarFila() {
+    var table = document.getElementById('table2');
+    var cells = table.getElementsByTagName('td');
+
+    for (var i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        cell.onclick = function () {
+            var rowId = this.parentNode.rowIndex;
+            var rowsNotSelected = table.getElementsByTagName('tr');
+            for (var row = 0; row < rowsNotSelected.length; row++) {
+                rowsNotSelected[row].style.backgroundColor = "";
+                rowsNotSelected[row].classList.remove('selected');
+            }
+            var rowSelected = table.getElementsByTagName('tr')[rowId];
+            rowSelected.className += " selected";
+
+            usuarioAHabilitar = rowSelected.cells[0].innerHTML;
+            document.getElementById("nombreMedico").innerHTML = usuarioAHabilitar
+
+        }
+    }
+}
+
+
+function seleccionarUsuario(){
   doctors = JSON.parse(localStorage.getItem("doctors"));
-  const usuarioSeleccionado2 = document.getElementById("dname")
-  const valorUsuario2 = usuarioSeleccionado2.value.trim();
-  console.log(valorUsuario2)
+  const MedicoAHabilitar = document.getElementById("nombreMedico")
+  const MedicoAHabilitarValue = MedicoAHabilitar.textContent
+  console.log(MedicoAHabilitarValue)
   for (i=0;i<doctors.length;i++){
-    if (doctors[i].username == valorUsuario2){
-      doctors[i].permission = "si"
+    if (doctors[i].usuario == MedicoAHabilitarValue){
+      doctors[i].permiso = "si"
       localStorage.setItem('doctors',JSON.stringify(doctors));
       window.location="admin.html";
       console.log(doctors[i])   
