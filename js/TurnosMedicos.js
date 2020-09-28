@@ -26,7 +26,7 @@ function generateTableHead(table) {
     let row = thead.insertRow();
 
     for (let key of data) {
-        if(key == "paciente" || key == "hora" || key == "dia"){
+        if(key == "paciente" || key == "hora" || key == "fecha"){
         let th = document.createElement("th");
         let text = document.createTextNode(key);
         th.appendChild(text);
@@ -41,7 +41,7 @@ function generateTable(table, data) {
       let row = table1.insertRow();
 
       for (key in element) {
-        if(key == "paciente" || key == "hora" || key == "dia"){
+        if(key == "paciente" || key == "hora" || key == "fecha"){
         let cell = row.insertCell();
         let text = document.createTextNode(element[key]);
         cell.appendChild(text);

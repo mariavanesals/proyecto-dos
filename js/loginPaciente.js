@@ -23,11 +23,9 @@ function verificarLogin() {
     let i;
     for (i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorcontrasena){
-        window.location.href = "../html/admin.html"    
+        window.location.href = "../html/adminPaciente.html"    
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "no"){
         let aviso = "tienes que aguardar a la verificacion de la cuenta"
-        alert("hola")
-        console.log("holaaa")
         mostrarModal(aviso)
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "si"){
         window.location.href = "../html/pacientes.html"
@@ -37,7 +35,6 @@ function verificarLogin() {
   }
 
 function mostrarModal(aviso){
-  console.log("hola")
   let modal = document.getElementById("myModal")
   var span = document.getElementsByClassName("close")[0];
 
