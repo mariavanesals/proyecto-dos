@@ -1,4 +1,5 @@
 let doctors = JSON.parse(localStorage.getItem("doctors"));
+console.log(doctors)
 let table2 = document.getElementById("table2");
 table2.setAttribute("class", "tabla");
 let data2 = Object.keys(doctors[0]);
@@ -13,10 +14,12 @@ function generateTableHead(table2) {
     let thead = table2.createTHead();
     let row = thead.insertRow();
     for (let key of data2) {
+      if(key == "nombreCompleto" || key == "disciplina" || key == "permiso" || key == "sucursal" ){
         let th = document.createElement("th");
         let text = document.createTextNode(key);
         th.appendChild(text);
         row.appendChild(th);
+      }
     }    
 }
 
@@ -25,9 +28,11 @@ function generateTable(table2, data2,) {
       let row = table2.insertRow();
 
       for (key in element) {
+        if(key == "nombreCompleto" || key == "disciplina" || key == "permiso" || key == "sucursal"){
         let cell = row.insertCell();
         let text = document.createTextNode(element[key]);
-        cell.appendChild(text);       
+        cell.appendChild(text);
+        }       
       } 
     }
 }
@@ -64,7 +69,7 @@ function seleccionarUsuario(){
   const MedicoAHabilitarValue = MedicoAHabilitar.textContent
   console.log(MedicoAHabilitarValue)
   for (i=0;i<doctors.length;i++){
-    if (doctors[i].usuario == MedicoAHabilitarValue){
+    if (doctors[i].nombreCompleto == MedicoAHabilitarValue){
       doctors[i].permiso = "si"
       localStorage.setItem('doctors',JSON.stringify(doctors));
       window.location="adminMedico.html";

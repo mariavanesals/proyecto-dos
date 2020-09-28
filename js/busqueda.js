@@ -120,33 +120,36 @@ function ReservarTurno(){
     const horaValue = hora.value
     const motivoConsultaValue = motivoConsulta.value
     let doctorSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
-    console.log(fechaValue)
-    console.log(horaValue)
-    console.log(motivoConsultaValue)
-    console.log(nombreUsuario)
-    console.log(doctorSeleccionado)
+    let infoMedico = doctores.filter(doctores => doctores.nombreCompleto === doctorSeleccionado);
+    let especialidad = infoMedico[0].disciplina
+    let turno = infoMedico[0].horario
+    let sucursal = infoMedico[0].sucursal
 
-    if(localStorage.getItem("TurnosConfirmados")){
-		let TurnosConfirmados1 = JSON.parse(localStorage.getItem("TurnosConfirmados"));
+    if(localStorage.getItem("turnosConfirmados")){
+		let TurnosConfirmados1 = JSON.parse(localStorage.getItem("turnosConfirmados"));
 		TurnosConfirmados1.push(
 			{
 				paciente: nombreUsuario,
 				fecha: fechaValue,
 				hora: horaValue,
-				consulta: motivoConsultaValue,
+                consulta: motivoConsultaValue,
+                doctor : doctorSeleccionado,
+                especialidad : especialidad,
 				}
 		)
-		localStorage.setItem("TurnosConfirmados",JSON.stringify(TurnosConfirmados1));
+		localStorage.setItem("turnosConfirmados",JSON.stringify(TurnosConfirmados1));
 	} else {
 		let TurnosConfirmados = Array(
 			{
 				paciente: nombreUsuario,
 				fecha: fechaValue,
 				hora: horaValue,
-				consulta: motivoConsultaValue,
+                consulta: motivoConsultaValue,
+                doctor : doctorSeleccionado,
+                especialidad : especialidad,
 			}
 		);
-		localStorage.setItem('TurnosConfirmados',JSON.stringify(TurnosConfirmados));
+		localStorage.setItem('turnosConfirmados',JSON.stringify(TurnosConfirmados));
 	}
 }
 

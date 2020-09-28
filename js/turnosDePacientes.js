@@ -5,27 +5,26 @@ let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 
 let turnosArchivados = JSON.parse(localStorage.getItem("turnosConfirmados"))
-let TurnosUsuarioLogueado = turnosArchivados.filter(turnosConfirmados => turnosConfirmados.paciente === nombreUsuario);
-console.log(TurnosUsuarioLogueado)
-let data = Object.keys(TurnosUsuarioLogueado[0]);
+let turnosUsuarioLogueado = turnosArchivados.filter(turnosConfirmados => turnosConfirmados.paciente === nombreUsuario);
 
 
 
 
 
 function tablaTurnos(){
-    let data = Object.keys(TurnosUsuarioLogueado[0]);
-    generateTable(table,TurnosUsuarioLogueado);
+    let data = Object.keys(turnosUsuarioLogueado[0]);
+    console.log(data)
+    generateTable(table,turnosUsuarioLogueado);
     generateTableHead(table,data);
 }
 
 
-function generateTableHead(table) {
+function generateTableHead(table,data) {
     let thead = table.createTHead();
     let row = thead.insertRow();
 
     for (let key of data) {
-        if(key == "doctor" || key == "hora" || key == "dia"){
+        if(key == "doctor" || key == "hora" || key == "fecha"){
         let th = document.createElement("th");
         let text = document.createTextNode(key);
         th.appendChild(text);
@@ -40,7 +39,7 @@ function generateTable(table, data) {
       let row = table1.insertRow();
 
       for (key in element) {
-        if(key == "doctor" || key == "hora" || key == "dia"){
+        if(key == "doctor" || key == "hora" || key == "fecha"){
         let cell = row.insertCell();
         let text = document.createTextNode(element[key]);
         cell.appendChild(text);

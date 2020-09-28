@@ -23,6 +23,10 @@ a:hover {
 
 .bg-mix { background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0); }
 
+.navbar{
+    position: fixed;
+}
+
 .btn-primary {
     background-color: var(--primary);
     border: 0;

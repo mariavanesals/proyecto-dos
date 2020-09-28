@@ -17,22 +17,39 @@ function verificarLogin() {
 
     const valorUsuario = usernameInput.value.trim();
     const valorcontrasena = contrasenaInput.value.trim();
+    console.log(valorUsuario)
+    console.log(valorcontrasena)
+
     let i;
     for (i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorcontrasena){
         window.location.href = "../html/admin.html"    
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "no"){
-        alert("tu cuenta tiene que ser verificada, aguarda 24hr")
+        let aviso = "tienes que aguardar a la verificacion de la cuenta"
+        alert("hola")
+        console.log("holaaa")
+        mostrarModal(aviso)
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "si"){
         window.location.href = "../html/pacientes.html"
         LoginUsuario()
-      } else {
-        alert("nombre o usuario incorrecto")
-      }
+      } 
     }
   }
 
+function mostrarModal(aviso){
+  console.log("hola")
+  let modal = document.getElementById("myModal")
+  var span = document.getElementsByClassName("close")[0];
 
+  modal.style.display = "block";
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  document.getElementById("modalText").innerHTML = aviso;
+
+}
 
 function mostrarError(input, message) {
     const formControl = input.parentElement;
