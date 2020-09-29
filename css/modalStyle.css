@@ -6,7 +6,9 @@
 
 .modalMedico{
     display: none;
-
+    position: absolute;
+    top: 50px;
+    z-index: 3;
 }
 
 #container5{
@@ -448,6 +450,10 @@
     padding: 1rem;
     display: none;
     margin-bottom: 50px;
+    position: absolute;
+    z-index: 4;
+    background-image: linear-gradient(to top, #00f2fe, #4facfe);
+
 
 }
 
