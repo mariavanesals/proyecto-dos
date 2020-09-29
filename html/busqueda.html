@@ -23,7 +23,7 @@
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-    <title>Dashboard - Templune</title>
+    <title>Busqueda</title>
 </head>
 
 <body>
@@ -35,15 +35,12 @@
                 <h4 class="text-light font-weight-bold mb-0">San Remo</h4>
             </div>
             <div class="menu">
+                <a href="busquedaPaciente.html" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
+                    Inicio</a>
                 <a href="busqueda.html" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
                     Busqueda</a>
-
                 <a href="TurnosConfirmados.html" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
                     Turno reservado</a>
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
-                    Perfil</a>
-                <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
-                    Configuración</a>
             </div>
         </div>
         <!-- Fin sidebar -->
@@ -62,19 +59,18 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="form-inline position-relative d-inline-block my-2">
                   <input class="form-control" type="search" id="busquedaInput" placeholder="Buscar" aria-label="Buscar">
-                  <button class="btn position-absolute btn-search" type="submit"><i class="icon ion-md-search"></i></button>
+                  <button class="btn position-absolute btn-search botonSearch2" type="submit"><i class="icon ion-md-search"></i></button>
                 </form>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                   <li class="nav-item dropdown">
                     <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="assets/img/user-1.png" class="img-fluid rounded-circle avatar mr-2"
-                      alt="https://generated.photos/" />
-                    Diego Velázquez
+                    Cuenta paciente
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Mi perfil</a>
-                      <a class="dropdown-item" href="#">Suscripciones</a>
+                    <div class="dropdown-menu dropdown-menu-right menuHamburguesa" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="busquedaPaciente.html">Inicio</a>
+                        <a class="dropdown-item" href="busqueda.html">Busqueda</a>
+                        <a class="dropdown-item" href="TurnosConfirmados.html">Turnos Confirmados</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="home.html">Cerrar sesión</a>
                     </div>
@@ -86,7 +82,7 @@
           <!-- Fin Navbar -->
 
         <!-- Page Content -->
-        <div id="content" class="bg-grey w-100">
+        <div id="content" class="bg-grey w-100 fila3">
 
               <section class="bg-light py-3">
                   <div class="container">
@@ -101,7 +97,7 @@
                       </div>
                   </div>
               </section>
-              <section>
+              <section class="fila2Tabla">
                 <table id="table1">
 
                 </table>

@@ -19,20 +19,33 @@ function verificarLogin() {
     const valorcontrasena = contrasenaInput.value.trim();
     console.log(valorUsuario)
     console.log(valorcontrasena)
+    let notUser = false;
 
-    let i;
-    for (i=0;i<dato.length;i++){
+    for (let i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorcontrasena){
         window.location.href = "../html/adminPaciente.html"    
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "no"){
         let aviso = "tienes que aguardar a la verificacion de la cuenta"
         mostrarModal(aviso)
+        notUser = false
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "si"){
-        window.location.href = "../html/pacientes.html"
+        notUser = false
+        window.location.href = "../html/busquedaPaciente.html"
         LoginUsuario()
-      } 
+      } else if (dato[i].usuario !== valorUsuario || dato[i].contrasena !== valorcontrasena){
+        notUser = true
+      }
     }
+    console.log(notUser)
+    if(notUser ){
+
+      alert("no es el usuario")
+
+    }
+
+
   }
+
 
 function mostrarModal(aviso){
   let modal = document.getElementById("myModal")

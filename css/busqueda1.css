@@ -62,6 +62,57 @@ a:hover {
     border-right: 1px solid var(--grey);
 }
 
+
+.fila2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fila2Tabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+
+}
+
+.fila1{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-top: 6rem;
+}
+
+
+@media (max-width: 320px) {
+    #sidebar-container {
+      display: none;
+    }
+    .stat {
+        border: 0;
+    }
+
+    .menuHamburguesa{
+        background-color:  #111B54;
+        color: white;
+    }
+
+    .dropdown-item{
+        color: white;
+    }
+
+    .fila1{
+        width: 80%;
+    }
+    .botonSearch{
+        top: 2px;
+    }
+    .botonSearch2{
+        top: 0.5px;
+    }
+
+  }
   
 @media (max-width: 768px) {
     #sidebar-container {
@@ -69,6 +120,23 @@ a:hover {
     }
     .stat {
         border: 0;
+    }
+    .menuHamburguesa{
+        background-color:  #111B54;
+        color: white;
+    }
+
+    .dropdown-item{
+        color: white;
+    }
+    .fila1{
+        width: 60%;
+    }
+    .botonSearch{
+        top: 2px;
+    }
+    .botonSearch2{
+        top: 0.5px;
     }
   }
   
