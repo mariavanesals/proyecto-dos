@@ -73,8 +73,8 @@ function almacenar(){
 				usuario: usuario.value,
 				contrasena: password.value,
 				mail: email.value,
-				permiso: "no"
-				}
+				permiso: false
+			}
 		)
 		localStorage.setItem("users",JSON.stringify(users1));
 	} else {
@@ -83,7 +83,7 @@ function almacenar(){
 				usuario: usuario.value,
 				contrasena: password.value,
 				mail: email.value,
-				permiso: "no"
+				permiso: false
 			}
 		);
 		localStorage.setItem('users',JSON.stringify(users));

@@ -346,6 +346,20 @@
     transform: translate(-50%, -50%) rotate(135deg);
 }
 
+#modalTurno{
+    width: 30%;
+    margin: auto;
+    border: 0.5px  black;
+    border-radius: 9px;
+    padding: 1rem;
+    display: none;
+    margin-bottom: 50px;
+    position: absolute;
+    z-index: 4;
+    background-image: linear-gradient(to top, #00f2fe, #4facfe);
+}
+
+
 @media (max-width: 410px){
     .content{
         flex-direction: column;
@@ -439,21 +453,24 @@
     }
 }
 
+@media (max-width: 320px){
+    .modalMedico{
+        width: 100%;
+        top: 80px;
+    }
 
-/*modal turno*/
-
-#modalTurno{
-    width: 30%;
-    margin: auto;
-    border: 1px solid black;
-    border-radius: 9px;
-    padding: 1rem;
-    display: none;
-    margin-bottom: 50px;
-    position: absolute;
-    z-index: 4;
-    background-image: linear-gradient(to top, #00f2fe, #4facfe);
-
+    .card{
+        height: 380px;
+    }
+    
+    #modalTurno{
+        width: 90%;
+        top: 230px;
+        margin-left: 17px;
+    }
 
 }
+
+
+
 

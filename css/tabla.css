@@ -3,6 +3,7 @@
     border-collapse: collapse;
     width: 30%;
     z-index: 1;
+    overflow: scroll;
 }
   
 .tabla td, .tabla th {
@@ -24,4 +25,10 @@
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
+
+@media (max-width: 320px){
+    .tabla{
+        width: 90%;
+    }
 }

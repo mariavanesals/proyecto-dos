@@ -1,12 +1,10 @@
 const form = document.getElementById("form1")
 console.log(form)
 const busqueda = document.getElementById("busqueda")
-let valorBusqueda = busqueda.value;
 let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario
 
 form.addEventListener("submit", e =>{
-    console.log(valorBusqueda)
 
     e.preventDefault();
     buscar();
@@ -14,6 +12,8 @@ form.addEventListener("submit", e =>{
 
 
 function buscar(){
+    let valorBusqueda = busqueda.value;
+
     console.log(valorBusqueda)
 
     if(valorBusqueda == "neurocirujano" || valorBusqueda == "neurologo" || valorBusqueda == "cerebro"){
@@ -31,6 +31,7 @@ function buscar(){
 }
 
 function guardarBusqueda(){
+    valorBusqueda = busqueda.value;
     console.log(valorBusqueda)
     if(localStorage.getItem("valorBusqueda")){
         let valorBusqueda1 = busqueda.value
