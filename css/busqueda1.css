@@ -9,6 +9,7 @@ body {
     font-family: 'Muli', sans-serif;
     font-weight: 300;
     color: var(--primary);
+    background-color:#efefef;
 }
 
 a:hover {
@@ -71,4 +72,3 @@ a:hover {
         border: 0;
     }
   }
-  

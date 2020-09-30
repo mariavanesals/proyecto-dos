@@ -46,7 +46,7 @@ function checkInputs() {
 	
 	function checkUserName(){
 		let dato = JSON.parse(localStorage.getItem("users"))
-		for(i=0;i<dato.length-1;i++){
+		for(i=0;i<dato.length;i++){
 			if(valorUsuario === dato[i].usuario){
 				mostrarError(usuario, "el usuario ingresado esta en uso")
 				return false
@@ -57,7 +57,7 @@ function checkInputs() {
 	}
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && checkUserName()) {
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== ''   && checkUserName()) {
 		almacenar()
 		window.location="registroListo.html"
 		

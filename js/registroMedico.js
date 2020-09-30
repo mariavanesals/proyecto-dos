@@ -86,7 +86,7 @@ function checkInputs() {
 	}
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== '' && checkUserName()) {
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && checkUserName()) {
 		almacenar()
 		window.location="../html/registroListo.html"
 		
