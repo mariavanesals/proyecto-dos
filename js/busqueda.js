@@ -6,8 +6,6 @@ let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 
-document.getElementById("busquedaInput").placeholder = busqueda;
-
 let doctores = JSON.parse(localStorage.getItem("doctors"))
 let dentistas = doctores.filter(doctores => doctores.disciplina === "dentista" & doctores.permiso === "si");
 let neurocirujanos = doctores.filter(doctores => doctores.disciplina === "neurocirujano" & doctores.permiso === "si");
@@ -67,6 +65,7 @@ function generateTable(table, data) {
       for (key in element) {
         if(key == "nombreCompleto" || key == "disciplina"){
         let cell = row.insertCell();
+        cell.style.cursor = "pointer"
         let text = document.createTextNode(element[key]);
         cell.appendChild(text);
         }       

@@ -14,25 +14,54 @@ form.addEventListener("submit", e => {
 
 function verificarLogin() {
     let dato = JSON.parse(localStorage.getItem("users"))
+    console.log(dato)
 
     const valorUsuario = usernameInput.value.trim();
     const valorcontrasena = contrasenaInput.value.trim();
-    console.log(valorUsuario)
-    console.log(valorcontrasena)
-
-    let i;
-    for (i=0;i<dato.length;i++){
-      if ("admin" == valorUsuario && "admin" == valorcontrasena){
-        window.location.href = "../html/adminPaciente.html"    
-      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "no"){
+    if ("admin" == valorUsuario && "admin" == valorcontrasena){
+      window.location.href = "../html/adminPaciente.html"
+    }
+    const busquedaUsuario = dato.find(user => {
+      if(user.usuario === valorUsuario && user.contrasena === valorcontrasena){
+        return user
+      }
+    })
+    if(busquedaUsuario){
+      if (busquedaUsuario.permiso){
+        window.location.href = "../html/busquedaPaciente.html"
+        LoginUsuario()
+      } else {
         let aviso = "tienes que aguardar a la verificacion de la cuenta"
         mostrarModal(aviso)
+      }
+      } else{
+        let aviso = "las credenciales enviadas no son correctas"
+        mostrarModal(aviso)
+      }
+    console.log(dato1)
+    //console.log(valorcontrasena)
+    let notUser = false;
+    /*for (let i=0;i<dato.length;i++){
+      if ("admin" == valorUsuario && "admin" == valorcontrasena){
+        window.location.href = "../html/adminPaciente.html"    
       } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "si"){
-        window.location.href = "../html/pacientes.html"
+        notUser = false
+        window.location.href = "../html/busquedaPaciente.html"
         LoginUsuario()
-      } 
+      } else if (dato[i].usuario !== valorUsuario || dato[i].contrasena !== valorcontrasena){
+        notUser = true
+      }
     }
+    //console.log(notUser)
+    if(notUser ){
+
+      alert("no es el usuario")
+
+    }*/
+
+
   }
+
 
 function mostrarModal(aviso){
   let modal = document.getElementById("myModal")

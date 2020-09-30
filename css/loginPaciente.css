@@ -265,3 +265,13 @@ a:hover{
 		justify-content: center;
 	}
 }
+
+@media screen and (max-width: 320px){
+	form{
+		width: 250px;
+	}
+
+	.modal-content{
+		width: 250px;
+	}
+}
