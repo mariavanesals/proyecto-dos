@@ -85,7 +85,7 @@ let buscarTurno = document.getElementById("abrirModalTurno")
 
 buscarTurno.addEventListener("click", e => {
     e.preventDefault();
-    let modal = document.getElementById("modalTurno")
+    let modal = document.getElementById("modalMedico1")
     modal.style.display = "none"
 
     mostrarModalTurno()
@@ -94,8 +94,32 @@ buscarTurno.addEventListener("click", e => {
 function mostrarModalTurno(){
     let modal = document.getElementById("modalTurno")
     let cancelar = document.getElementById("cancelar")
+    let botonHamburguesa = document.getElementById("botonHamburguesa")
+
 
     modal.style.display = "block"
+    doctores = JSON.parse(localStorage.getItem("doctors"))
+
+    medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
+    
+    let infoMedico = doctores.filter(doctores => doctores.nombreCompleto === medicoSeleccionado);
+    let horarioAtencion = infoMedico[0].horario
+
+    if(horarioAtencion == "mañana"){
+        document.getElementById("opcion1").innerHTML = 9;
+        document.getElementById("opcion2").innerHTML = 10;
+        document.getElementById("opcion3").innerHTML = 11;
+        document.getElementById("opcion4").innerHTML = 12;
+    } else{
+        document.getElementById("opcion1").innerHTML = 16;
+        document.getElementById("opcion2").innerHTML = 17;
+        document.getElementById("opcion3").innerHTML = 18;
+        document.getElementById("opcion4").innerHTML = 19;
+    }
+
+    botonHamburguesa.onclick = function(){
+        modal.style.display = "none"
+    }
 
     cancelar.onclick = function(){
         modal.style.display = "none"
@@ -107,9 +131,27 @@ let botonReservar = document.getElementById("botonReservar")
 
 botonReservar.addEventListener("click", e => {
     e.preventDefault();
-
+    
     ReservarTurno()
+    window.location="ReservaLista.html"; 
 })
+
+function verificarTurnoLibre(){
+    turnosConfirmados = JSON.parse(localStorage.getItem("turnosConfirmados"))
+    let modal = document.getElementById("modal")
+    let 
+    const fechaValue = fecha.value
+    const horaValue = hora.value
+    turnoYaOcupado = turnosConfirmados.filter(turnosConfirmados => turnosConfirmados.fecha === fechaValue && turnosConfirmados.hora === horaValue)
+
+    if(turnoYaOcupado){
+        let aviso = "Este turno ya se encuentra ocupado"
+        mostrarModalTurnoConfirmado(aviso)
+    } else{
+        ReservarTurno()
+        window.location="ReservaLista.html"; 
+    }
+}
 
 function ReservarTurno(){
     const fecha = document.getElementById("fechaCalendario")
@@ -182,6 +224,7 @@ function seleccionarFila() {
 function mostrarModal(){
     let modal = document.getElementById("modalMedico1")
     let botonCerrar = document.getElementById("cerrarModal")
+    botonHamburguesa = document.getElementById("botonHamburguesa")
 
     modal.style.display = "block"
     botonCerrar.onclick = function(){
@@ -190,17 +233,20 @@ function mostrarModal(){
 
     let medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
 
-    let infoMedico = doctores.filter(doctores => doctores.nombreCompleto === medicoSeleccionado);
+    infoMedico = doctores.filter(doctores => doctores.nombreCompleto === medicoSeleccionado);
     let especialidad = infoMedico[0].disciplina
     let turno = infoMedico[0].horario
     let sucursal = infoMedico[0].sucursal
 
-    medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
     document.getElementById("nombreCompleto").innerHTML = medicoSeleccionado;
     document.getElementById("especialidad").innerHTML = especialidad;
     document.getElementById("sobreMi").innerHTML = "Atiendo a la " + turno + " en la sucursal de " + sucursal;
 
     botonCerrar.onclick = function(){
+        modal.style.display = "none"
+    }
+
+    botonHamburguesa.onclick = function(){
         modal.style.display = "none"
     }
 

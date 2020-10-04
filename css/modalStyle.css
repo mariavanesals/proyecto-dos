@@ -7,8 +7,9 @@
 .modalMedico{
     display: none;
     position: absolute;
-    top: 50px;
+    top: 120px;
     z-index: 3;
+
 }
 
 #container5{
@@ -357,10 +358,56 @@
     position: absolute;
     z-index: 4;
     background-image: linear-gradient(to top, #00f2fe, #4facfe);
+    top: 220px;
+}
+
+@media (max-width: 1000px){
+    #modalTurno{
+        width: 40%;
+        top: 230px;
+    }
+
+    .modalMedico{
+        width: 100%;
+        top: 130px;
+        
+    }
+
+}
+
+@media (max-width: 768px){
+    #modalTurno{
+        width: 65%;
+        top: 230px;
+    }
+
+    .modalMedico{
+        width: 100%;
+        top: 130px;
+        
+    }
+
+    .card{
+        height: 480px;
+    }
+
 }
 
 
+
+
 @media (max-width: 410px){
+
+    .modalMedico{
+        width: 102%;
+        top: 105px;
+        
+    }
+
+    .card{
+        height: 410px;
+    }
+
     .content{
         flex-direction: column;
     }
@@ -372,9 +419,24 @@
         align-items: center;
         margin: 0;
     }
+    #modalTurno{
+        width: 80%;
+        top: 230px;
+    }
 }
 
 @media (max-width: 370px){
+
+    .modalMedico{
+        width: 102%;
+        top: 105px;
+        
+    }
+
+    .card{
+        height: 340px;
+    }
+
     .header{
         height: 230px;
     }
@@ -455,18 +517,18 @@
 
 @media (max-width: 320px){
     .modalMedico{
-        width: 100%;
-        top: 80px;
+        width: 102%;
+        top: 105px;
+        
     }
 
     .card{
-        height: 380px;
+        height: 340px;
     }
     
     #modalTurno{
         width: 90%;
         top: 230px;
-        margin-left: 17px;
     }
 
 }

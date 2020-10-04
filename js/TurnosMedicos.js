@@ -2,12 +2,11 @@ let table = document.getElementById("table1");
 table.setAttribute("class", "tabla");
 let usuarioMedico = JSON.parse(localStorage.getItem("medicoLogueado"))
 let doctores = JSON.parse(localStorage.getItem("doctors"))
-document.getElementById("nombreMedico").innerHTML = usuarioMedico;
-
 let infoMedico = doctores.filter(doctores => doctores.usuario === usuarioMedico);
 let nombreMedico = infoMedico[0].nombreCompleto
 console.log(infoMedico[0].nombreCompleto)
 
+document.getElementById("nombreMedico").innerHTML = nombreMedico;
 
 let turnosArchivados = JSON.parse(localStorage.getItem("turnosConfirmados"))
 let TurnosMedicoLogueado = turnosArchivados.filter(turnosConfirmados => turnosConfirmados.doctor === nombreMedico);

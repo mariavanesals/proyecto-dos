@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../css/busqueda1.css">
     <link rel="stylesheet" type="text/css" href="../css/tabla.css">
+    <link rel="stylesheet" type="text/css" href="../css/perfilMedico.css">
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-    <title>Dashboard - Templune</title>
+    <title>Perfil Medico</title>
 </head>
 
 <body>
@@ -63,9 +64,9 @@
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Cuenta Medico
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right menuHamburguesa" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Mi perfil</a>
-                      <a class="dropdown-item" href="#">Suscripciones</a>
+                      <a class="dropdown-item" href="#">Mis turnos</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="home.html">Cerrar sesión</a>
                     </div>
@@ -79,21 +80,38 @@
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
 
-              <section class="bg-light py-3">
+              <section class="bg-light py-3 fila3">
                   <div class="container">
                       <div class="row">
                           <div class="col-lg-9 col-md-8">
                             <h1 id="nombreMedico" class="font-weight-bold mb-0"></h1>
-                            <p class="lead text-muted">Revisa tus turnos</p>
+                            <p class="lead text-muted">Modifica tus horarios y centro de atencion</p>
                           </div>
                           <div class="col-lg-3 col-md-4 d-flex">
-                            <button class="btn btn-primary w-100 align-self-center">Descargar comprobante de turno</button>
+                            <button class="btn btn-primary w-100 align-self-center">Descargar comprobante de modificacion</button>
                           </div>
                       </div>
                   </div>
               </section>
               <section class="fila2Tabla">
-                <table id="table1">          
+                <form class="formularioMedico" id="formularioMedico">
+                    <div class="form-group">
+                      <label for="text">Nueva Sucursal</label>
+                      <select class="form-control" id="cambioSucursal">
+                        <option>San Miguel</option>
+                        <option>Tafi Viejo</option>
+                        <option>Yerba Buena</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="text">Nuevo Horario:</label>
+                      <select class="form-control" id="cambioHorario">
+                        <option>mañana</option>
+                        <option>tarde</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="actualizarPerfil">Actualizar</button>
+                  </form>           
               </section>
 
         </div>
@@ -113,7 +131,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="../js/TurnosMedicos.js"></script>
+    <script src="../js/perfilMedico.js"></script>
 
 </body>
 

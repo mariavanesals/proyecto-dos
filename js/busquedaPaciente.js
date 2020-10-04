@@ -10,13 +10,24 @@ form.addEventListener("submit", e =>{
     buscar();
 })
 
-
 function buscar(){
     let valorBusqueda = busqueda.value;
+    let busquedasPosibles = JSON.parse(localStorage.getItem("busquedasPosibles"))
+            
+    const busquedaUsuario = busquedasPosibles.find(user => {
+        if(user === valorBusqueda){
+          return user
+        }
+    })
 
-    console.log(valorBusqueda)
+    if(busquedaUsuario){
+        guardarBusqueda()
+        window.location.href = "../html/busqueda.html"
+    } else{
+        alert("no se encontro resultados de su busqueda")
+    }
 
-    if(valorBusqueda == "neurocirujano" || valorBusqueda == "neurologo" || valorBusqueda == "cerebro"){
+    /*if(valorBusqueda == "neurocirujano" || valorBusqueda == "neurologo" || valorBusqueda == "cerebro"){
         guardarBusqueda()
         window.location.href = "../html/busqueda.html"
     } else if (valorBusqueda == "dermatologo" || valorBusqueda == "dermatologia" || valorBusqueda == "piel"){
@@ -27,7 +38,7 @@ function buscar(){
         window.location.href = "../html/busqueda.html"
     } else {
         alert("no se encontro resultados de su busqueda")
-    }
+    }*/
 }
 
 function guardarBusqueda(){

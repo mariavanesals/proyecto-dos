@@ -34,13 +34,11 @@ function verificarLogin() {
         let aviso = "tienes que aguardar a la verificacion de la cuenta"
         mostrarModal(aviso)
       }
-      } else{
-        let aviso = "las credenciales enviadas no son correctas"
-        mostrarModal(aviso)
-      }
-    console.log(dato1)
+    } else{
+      let aviso = "las credenciales enviadas no son correctas"
+      mostrarModal(aviso)
+    }
     //console.log(valorcontrasena)
-    let notUser = false;
     /*for (let i=0;i<dato.length;i++){
       if ("admin" == valorUsuario && "admin" == valorcontrasena){
         window.location.href = "../html/adminPaciente.html"    
@@ -66,8 +64,14 @@ function verificarLogin() {
 function mostrarModal(aviso){
   let modal = document.getElementById("myModal")
   var span = document.getElementsByClassName("close")[0];
+  const valorUsuario = usernameInput.value.trim();
+  const valorcontrasena = contrasenaInput.value.trim();
 
-  modal.style.display = "block";
+  if ("admin" == valorUsuario && "admin" == valorcontrasena){
+    modal.style.display = "none";
+  } else{
+    modal.style.display = "block";
+  }
 
   span.onclick = function() {
     modal.style.display = "none";
@@ -122,3 +126,4 @@ inputs.forEach(input => {
 	input.addEventListener("focus", addcl);
 	input.addEventListener("blur", remcl);
 });
+
