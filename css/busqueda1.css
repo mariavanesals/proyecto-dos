@@ -75,6 +75,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     margin-top: 6rem;
+    
 
 }
 
@@ -83,6 +84,7 @@ a:hover {
     flex-direction: column;
     width: 35%;
     margin-top: 6rem;
+   
 }
 
 
@@ -140,3 +142,9 @@ a:hover {
         top: 0.5px;
     }
   }
+  .dropdown-item{
+      background-color:  white;
+      color:  #111B54;
+      font-weight: bold;*/
+  }
+ 
