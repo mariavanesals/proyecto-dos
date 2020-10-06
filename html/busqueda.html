@@ -51,7 +51,7 @@
          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container">
     
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              <button class="navbar-toggler" id="botonHamburguesa" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -110,9 +110,7 @@
                   <div class="container" id="container5">
                       <div class="card">
                           <div class="header">
-                              <div class="hamburger-menu">
-                                  <div class="center"></div>
-                              </div>
+
                               <a href="#" class="mail">
                                   <i class="far fa-envelope"></i>
                               </a>
@@ -148,41 +146,42 @@
                       </div>
                   </div>
               </div>
+              <div id="modalTurno">
+                <form class="formularioTurno">
+                    <div class="form-group">
+                        <label>Saque un turno!</label>
+                    </div>
+                    <div class="form-group">
+                      <label>Dia y Horario</label>
+                      <input type="text" class="form-control" id="fechaCalendario">
+                    </div>
+                    <div class="form-group">
+                        <label>Horario</label>
+                        <select id="hora">
+                            <option id="opcion1"></option>
+                            <option id="opcion2"></option>
+                            <option id="opcion3"></option>
+                            <option id="opcion4"></option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Motivo de consulta</label>
+                      <textarea class="form-control" id="motivoConsulta"></textarea>
+                    </div>
+                    <div class="buttons-wrap">
+                        <div class="follow-wrap">
+                            <button type="submit" class="follow" id="botonReservar">Reservar Turno</button>
+                        </div>
+                        <div class="share-wrap">
+                            <button type="submit" class="share" id="cancelar">Cancelar</button>
+                        </div>
+                    </div>
+                  </form>
+            </div>
             
               </section>
               <section class="filaTablaTurno">
-                <div id="modalTurno">
-                    <form class="formularioTurno">
-                        <div class="form-group">
-                            <label>Saque un turno!</label>
-                        </div>
-                        <div class="form-group">
-                          <label>Dia y Horario</label>
-                          <input type="text" class="form-control" id="fechaCalendario">
-                        </div>
-                        <div class="form-group">
-                            <label>Horario</label>
-                            <select id="hora">
-                                <option id="opcion1">4</option>
-                                <option id="opcion2">5</option>
-                                <option id="opcion3">6</option>
-                                <option id="opcion4">7</option>
-                              </select>
-                        </div>
-                        <div class="form-group">
-                          <label>Motivo de consulta</label>
-                          <textarea class="form-control" id="motivoConsulta"></textarea>
-                        </div>
-                        <div class="buttons-wrap">
-                            <div class="follow-wrap">
-                                <button type="submit" class="follow" id="botonReservar">Reservar Turno</button>
-                            </div>
-                            <div class="share-wrap">
-                                <button type="submit" class="share" id="cancelar">Cancelar</button>
-                            </div>
-                        </div>
-                      </form>
-                </div>
+
               </section>
 
 
@@ -190,6 +189,16 @@
 
         </div>
     </div>
+    <div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+		  <span class="close">&times;</span>
+		  <p>Atencion!</p>
+		  <p id="modalText"></p>
+		</div>
+	  
+	  </div>
 
 
     <!-- Optional JavaScript -->

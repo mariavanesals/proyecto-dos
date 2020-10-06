@@ -45,19 +45,20 @@ function checkInputs() {
 	}
 	
 	function checkUserName(){
-		let dato = JSON.parse(localStorage.getItem("users"))
-		for(i=0;i<dato.length;i++){
-			if(valorUsuario === dato[i].usuario){
-				mostrarError(usuario, "el usuario ingresado esta en uso")
-				return false
-			} 
-			return true
-		}
 		
+			let dato = JSON.parse(localStorage.getItem("users"))
+			for(i=0;i<dato.length;i++){
+				if(valorUsuario === dato[i].usuario){
+					mostrarError(usuario, "el usuario ingresado esta en uso")
+					return false
+				} 
+				return true
+			}
+				
 	}
 
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== ''   && checkUserName()) {
+    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && checkUserName()) {
 		almacenar()
 		window.location="registroListo.html"
 		
