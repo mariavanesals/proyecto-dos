@@ -1,6 +1,8 @@
 *{
     margin:0;
     padding: 0;
+   
+    
 }
 .container-fluid{
     background-image: url("../img/home.jpg");
@@ -11,7 +13,7 @@
     padding-top: 5rem;
 }
 .botones {
-    margin-top: 21rem;
+    margin-top: 17rem;
     position: relative;
     display: flex;
     justify-content: center;

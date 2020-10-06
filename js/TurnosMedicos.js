@@ -8,6 +8,24 @@ let infoMedico = doctores.filter(doctores => doctores.usuario === usuarioMedico)
 let nombreMedico = infoMedico[0].nombreCompleto
 console.log(infoMedico[0].nombreCompleto)
 
+const btncerrarSesion = document.getElementById("cerrarSesion");
+
+btncerrarSesion.addEventListener("click", e => {
+  e.preventDefault();
+  cerrarSesion();
+})
+  cerrarSesion(){
+    const deslogueo = "sinLogin"
+  };
+
+  if (usuarioMedico === "sinLogin"){
+      window.location="pagina404.html";
+  };
+
+
+
+
+
 
 let turnosArchivados = JSON.parse(localStorage.getItem("turnosConfirmados"))
 let TurnosMedicoLogueado = turnosArchivados.filter(turnosConfirmados => turnosConfirmados.doctor === nombreMedico);

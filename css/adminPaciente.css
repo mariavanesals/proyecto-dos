@@ -93,6 +93,11 @@ a:hover {
     color: white;
 }
 
+.table-responsive1{
+    display: block;
+    width: 70%;
+    
+}
 
 
 @media (max-width: 768px) {
@@ -103,9 +108,25 @@ a:hover {
         border: 0;
     }
   }
+ 
   .buton {
       height: 50px;
       
   }
+
+
+
+  @media (max-width: 320px){
+    .table{
+        width: 60%;
+        
+    }
+    .table-responsive1{
+        display: block;
+        width: 50%;
+        
+    }
+}
+
 
   

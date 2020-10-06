@@ -6,6 +6,24 @@ let usuarioLogueado = "Admin"
 document.getElementById("usuarioLogueado").innerHTML = usuarioLogueado
 let data = Object.keys(users[0]);
 
+const btncerrarSesion = document.getElementById("cerrarSesion");
+
+btncerrarSesion.addEventListener("click", e => {
+  e.preventDefault();
+  cerrarSesion();
+})
+  function cerrarSesion(){
+    const deslogueo = "sinLogin"
+  };
+
+  if (usuarioLogueado === "sinLogin"){
+      window.location="permisoDenegado.html";
+  };
+
+
+
+
+
 generateTable(table, users);
 generateTableHead(table,data);
 
