@@ -4,7 +4,9 @@ let usuarioMedico = JSON.parse(localStorage.getItem("medicoLogueado"))
 let doctores = JSON.parse(localStorage.getItem("doctors"))
 let infoMedico = doctores.filter(doctores => doctores.usuario === usuarioMedico);
 let nombreMedico = infoMedico[0].nombreCompleto
-console.log(infoMedico[0].nombreCompleto)
+let botonCerrarSesion = document.getElementById("cerrarSesion")
+
+
 
 document.getElementById("nombreMedico").innerHTML = nombreMedico;
 

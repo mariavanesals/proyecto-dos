@@ -132,26 +132,45 @@ let botonReservar = document.getElementById("botonReservar")
 botonReservar.addEventListener("click", e => {
     e.preventDefault();
     
-    ReservarTurno()
-    window.location="ReservaLista.html"; 
+    verificarTurnoLibre()
+    //ReservarTurno()
+    //window.location="ReservaLista.html"; 
 })
 
 function verificarTurnoLibre(){
     turnosConfirmados = JSON.parse(localStorage.getItem("turnosConfirmados"))
-    let modal = document.getElementById("modal")
-    let 
+    const fecha = document.getElementById("fechaCalendario")
+    const hora = document.getElementById("hora")
     const fechaValue = fecha.value
     const horaValue = hora.value
-    turnoYaOcupado = turnosConfirmados.filter(turnosConfirmados => turnosConfirmados.fecha === fechaValue && turnosConfirmados.hora === horaValue)
-
+    const turnoYaOcupado = turnosConfirmados.find(turno => {
+    if(turno.hora === horaValue && turno.fecha === fechaValue){
+        return turno
+        }
+    })
+    console.log(turnoYaOcupado)   
     if(turnoYaOcupado){
         let aviso = "Este turno ya se encuentra ocupado"
         mostrarModalTurnoConfirmado(aviso)
     } else{
-        ReservarTurno()
-        window.location="ReservaLista.html"; 
+        alert("nuevo turno reservado")
+        //ReservarTurno()
+        //window.location="ReservaLista.html"; 
     }
 }
+
+function mostrarModalTurnoConfirmado(aviso){
+    console.log("hola")
+    let modal = document.getElementById("myModal1")
+    var span = document.getElementsByClassName("close1")[0];
+
+    modal.style.display = "block";
+  
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    document.getElementById("modalText").innerHTML = aviso;
+  }
 
 function ReservarTurno(){
     const fecha = document.getElementById("fechaCalendario")
@@ -225,6 +244,8 @@ function mostrarModal(){
     let modal = document.getElementById("modalMedico1")
     let botonCerrar = document.getElementById("cerrarModal")
     botonHamburguesa = document.getElementById("botonHamburguesa")
+
+
 
     modal.style.display = "block"
     botonCerrar.onclick = function(){

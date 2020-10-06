@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="adminPaciente.html" target="_blank">Autorizar Usuarios</a>
+            <a class="nav-link" href="adminPaciente.html">Autorizar Usuarios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="adminMedico.html">Autorizar Medicos</a>
@@ -56,13 +56,13 @@
           </li>
          </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
       </div>
     </nav>
   </header>
-      <section class="bg-light pt-2  mb-1"></section>
+      <section class="bg-light pt-2  mb-1 "></section>
           <div class="container">
               <div class="row">
                   <div class="col-lg-9 col-md-8">
@@ -74,21 +74,25 @@
                   </div>
               </div>
           </div>
-      </section>           
-<div class="container d-flex justify-content-center">
-  <div class="row align-items-center">  
-    <div class="table-responsive">    
+      </section>
+  <div class="fondo"> 
+  <div class="d-flex justify-content-center mt-5 pt-3 ">
+    <label class="barraLabel texto1" for="fname">Selecciona Usuario:</label>
+    <label class="barraLabel font-weight-bold pl-1" id="nombreUsuario" for="fname"></label>
+    <div class="barraLabel d-flex align-self-center pl-1">
+    <button class="buton btn-primary h-50"  style="border-radius:5px"; onclick="seleccionarUsuario()">Autorizar</button>    
+    </div>
+  </div>       
+  <div class="container d-flex justify-content-center" >
+    <div class="row align-items-center">  
+      <div class="tablaAdminPaciente">    
          <table class="table" id="table1">
          </table>
-    </div>
-   </div> 
-</div>       
-<div class="contenidoTabla2 d-flex justify-content-center mt-5 pt-3 ">
-  <label class="pr-3" for="fname">Usuario:</label>
-  <label class="font-weight-bold pl-2" id="nombreUsuario" for="fname"></label>
-  <div class="d-flex align-self-center pl-5">
-  <button class="buton btn-primary pl-2 ml-2 h-50"  style="border-radius:5px"; onclick="seleccionarUsuario()">Autorizar</button>    
-</div>            
+      </div>
+    </div> 
+  </div>       
+
+</div>               
      
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

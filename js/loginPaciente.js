@@ -38,26 +38,6 @@ function verificarLogin() {
       let aviso = "las credenciales enviadas no son correctas"
       mostrarModal(aviso)
     }
-    //console.log(valorcontrasena)
-    /*for (let i=0;i<dato.length;i++){
-      if ("admin" == valorUsuario && "admin" == valorcontrasena){
-        window.location.href = "../html/adminPaciente.html"    
-      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorcontrasena && dato[i].permiso == "si"){
-        notUser = false
-        window.location.href = "../html/busquedaPaciente.html"
-        LoginUsuario()
-      } else if (dato[i].usuario !== valorUsuario || dato[i].contrasena !== valorcontrasena){
-        notUser = true
-      }
-    }
-    //console.log(notUser)
-    if(notUser ){
-
-      alert("no es el usuario")
-
-    }*/
-
-
   }
 
 
@@ -80,20 +60,6 @@ function mostrarModal(aviso){
   document.getElementById("modalText").innerHTML = aviso;
 
 }
-
-function mostrarError(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
-}
-  
-function mostrarExito(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-}  
-
-
 
 function LoginUsuario(){
 	if(localStorage.getItem("usuarioLogueado")){

@@ -325,3 +325,36 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+.the-datepicker__top{
+  height: 27px;
+}
+
+@media(max-height: 600px){
+  .the-datepicker__top{
+    height: 20px;
+  }
+  .the-datepicker__close{
+    position: relative;
+    top: -5px;
+  }
+  .the-datepicker__navigation{
+    margin: 0px;
+  }
+  .the-datepicker__main .the-datepicker__body{
+    margin-top: 0px;
+  }
+  .the-datepicker__body{
+    margin-top: 0px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+  }
+  .the-datepicker__main{
+    line-height: 0.80rem;
+  }
+
+  .the-datepicker__container{
+    width: 90%;
+  }
+}

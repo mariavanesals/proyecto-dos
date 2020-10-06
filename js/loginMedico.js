@@ -13,35 +13,52 @@ let dato = JSON.parse(localStorage.getItem("doctors"))
 const valorUsuario = usernameInput.value.trim();
 const valorContrasena = contrasenaInput.value.trim();
 
-function verificarLogin() {
+  function verificarLogin() {
     let dato = JSON.parse(localStorage.getItem("doctors"))
+
     const valorUsuario = usernameInput.value.trim();
-    const valorContrasena = contrasenaInput.value.trim();
-    for (i=0;i<dato.length;i++){
-      if ("admin" == valorUsuario && "admin" == valorContrasena){
-        window.location.href = "../html/adminMedico.html"    
-      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorContrasena && dato[i].permiso == "no"){
-        alert("tu cuenta tiene que ser verificada, aguarda 24hr")
-      } else if (dato[i].usuario == valorUsuario && dato[i].contrasena == valorContrasena && dato[i].permiso == "si"){
-        LoginMedico()
+    const valorcontrasena = contrasenaInput.value.trim();
+    if ("admin" == valorUsuario && "admin" == valorcontrasena){
+      window.location.href = "../html/adminPaciente.html"
+    }
+    const busquedaUsuario = dato.find(user => {
+      if(user.usuario === valorUsuario && user.contrasena === valorcontrasena){
+        return user
+      }
+    })
+    if(busquedaUsuario){
+      if (busquedaUsuario.permiso){
         window.location.href = "../html/medico.html"
-      }     
+        LoginUsuario()
+      } else {
+        let aviso = "tienes que aguardar a la verificacion de la cuenta"
+        mostrarModal(aviso)
+      }
+    } else{
+      let aviso = "las credenciales enviadas no son correctas"
+      mostrarModal(aviso)
     }
   }
 
-
-
-function mostrarError(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
-}
+  function mostrarModal(aviso){
+    let modal = document.getElementById("myModal")
+    var span = document.getElementsByClassName("close")[0];
+    const valorUsuario = usernameInput.value.trim();
+    const valorcontrasena = contrasenaInput.value.trim();
   
-function mostrarExito(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-}  
+    if ("admin" == valorUsuario && "admin" == valorcontrasena){
+      modal.style.display = "none";
+    } else{
+      modal.style.display = "block";
+    }
+  
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    document.getElementById("modalText").innerHTML = aviso;
+  
+  }
 
 function LoginMedico(){
 	if(localStorage.getItem("medicoLogueado")){

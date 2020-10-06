@@ -8,3 +8,19 @@
 .formularioMedico .form-control{
     width: 90%;
 }
+
+@media (max-width:768px){
+    .formularioMedico{
+        width: 90%;
+        position: relative;
+        top: -60px;
+    }
+    .form-control{
+        width: 90%;
+    }
+    .botonSearch3{
+        position: relative;
+        right: 30px;
+        top: 1px;
+    }
+}

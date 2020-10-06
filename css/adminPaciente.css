@@ -36,6 +36,11 @@ a:hover {
     background-color: var(--primary);
 }
 
+.container{
+    margin-top: 8px;
+    height: 62px;
+}
+
 #sidebar-container {
     min-height: 100vh;
 }
@@ -64,6 +69,16 @@ a:hover {
 
 .stat {
     border-right: 1px solid var(--grey);
+}
+
+.fondo{
+    background-color: var(--grey);
+    height: 430px;
+}
+
+.barraLabel{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .tabla {
@@ -102,10 +117,60 @@ a:hover {
     .stat {
         border: 0;
     }
+    .container{
+        height: 100px;
+    }
   }
   .buton {
       height: 50px;
       
-  }
+}
+
+@media (max-width: 410px) {
+    .tablaAdminPaciente td {
+        border: 1px solid #ddd;
+        padding: 6px;
+        font-size: 15px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 2;      
+    }
+    .tablaAdminPaciente th{
+        border: 1px solid #ddd;
+        padding: 6px;
+        font-size: 15px;
+        text-align: center; 
+    }
+}
+
+@media (max-width: 380px) {
+    .tablaAdminPaciente td {
+        border: 1px solid #ddd;
+        padding: 4px;
+        font-size: 13px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 2;      
+    }
+    .tablaAdminPaciente th{
+        border: 1px solid #ddd;
+        padding: 4px;
+        font-size: 13px;
+        text-align: center; 
+    }
+    .container{
+        height: 100px;
+    }
+    .barraLabel{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .texto1{
+        font-size: 15px;
+    }
+
+}
 
   

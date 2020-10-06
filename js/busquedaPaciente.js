@@ -3,12 +3,32 @@ console.log(form)
 const busqueda = document.getElementById("busqueda")
 let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario
+const cerrarSesion = document.getElementById("cerrarSesion");
+
+
 
 form.addEventListener("submit", e =>{
 
     e.preventDefault();
     buscar();
 })
+
+cerrarSesion.addEventListener("click", e =>{
+
+    e.preventDefault();
+    deslogueo();
+    window.location.href = "../html/home.html"
+})
+
+function deslogueo(){
+	if(localStorage.getItem("usuarioLogueado")){
+    let usuarioLogueado1 = "sinLogin"
+    localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado1));
+	} else {
+		let usuarioLogueado = "sinLogin"
+    localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado));
+  }
+}
 
 function buscar(){
     let valorBusqueda = busqueda.value;
@@ -52,4 +72,9 @@ function guardarBusqueda(){
             let valorBusqueda2 = busqueda.value
         localStorage.setItem('valorBusqueda',JSON.stringify(valorBusqueda2));
       }
+}
+
+
+if(nombreUsuario === "sinLogin"){
+    window.location.href = "../html/ReservaLista.html"
 }

@@ -3,7 +3,7 @@
     border-collapse: collapse;
     width: 30%;
     z-index: 1;
-    overflow: scroll;
+    overflow-y: auto;
 }
   
 .tabla td, .tabla th {
@@ -27,8 +27,70 @@
     color: white;
 }
 
+.contenedorTablaMedicos{
+    overflow-y: auto; 
+    max-height: 290px;
+}
+
+@media(min-height: 800px){
+    .contenedorTablaMedicos{
+        overflow-y: auto; 
+        max-height: 250px;
+    }
+
+}
+
+@media (max-width: 768px){
+    .tabla{
+        width: 70%;
+    }
+    .tablaTurnoMedico{
+        width: 80%;
+    }
+    .contenedorTablaMedicos{
+        overflow-y: auto; 
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 420px){
+    .contenedorTablaMedicos{
+        overflow-y: auto; 
+        max-height: 250px;
+    }
+    .tablaAdminMedico td {
+        border: 1px solid #ddd;
+        padding: 2px;
+        font-size: 12px;
+        text-align: center;
+        top: 0;
+        z-index: 2;      
+    }
+    .tablaAdminMedico th{
+        border: 1px solid #ddd;
+        padding: 2px;
+        font-size: 12px;
+        text-align: center; 
+    }
+    .tablaAdminMedico label, button{
+        font-size: 13px;
+    }
+    .botonAutorizar{
+        position: relative;
+        top: -2px;
+    }
+
+}
+
 @media (max-width: 320px){
     .tabla{
         width: 80%;
     }
+    .tablaTurnoMedico{
+        width: 80%;
+    }
+    .tablaAdminMedico{
+        width: 80%;
+    }
+
 }
