@@ -1,5 +1,5 @@
 body {
-    padding-top: 90px;
+    padding-top: 100px;
 }
 .html,body{
 	background-image: url('../img/fondo-login-medico.jpg');
@@ -148,4 +148,17 @@ body {
 	.close{
 		left: 240px;
 	}
+}
+.row {
+	width: 95%;
+	margin-left: 2px;
+    padding-left: 1px;
+  
+}
+.row .container6{
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	width: 95%;
+	
 }
