@@ -1,6 +1,28 @@
 let table = document.getElementById("table1");
 table.setAttribute("class", "tabla");
 let usuarioMedico = JSON.parse(localStorage.getItem("medicoLogueado"))
+
+if(usuarioMedico === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
+
+cerrarSesion.addEventListener("click", e =>{
+
+    e.preventDefault();
+    deslogueo();
+    window.location.href = "../html/home.html"
+})
+
+function deslogueo(){
+	if(localStorage.getItem("medicoLogueado")){
+    let medicoLogueado1 = "sinLogin"
+    localStorage.setItem('medicoLogueado',JSON.stringify(medicoLogueado1));
+	} else {
+		let medicoLogueado = "sinLogin"
+    localStorage.setItem('medicoLogueado',JSON.stringify(medicoLogueado));
+  }
+}
+
 let doctores = JSON.parse(localStorage.getItem("doctors"))
 let infoMedico = doctores.filter(doctores => doctores.usuario === usuarioMedico);
 let nombreMedico = infoMedico[0].nombreCompleto

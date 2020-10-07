@@ -2,9 +2,6 @@ const form = document.getElementById("form")
 const usernameInput = document.getElementById("usuario")
 const contrasenaInput = document.getElementById("contrasena")
 let usuarioLogueado1 = usernameInput.value
-console.log(usuarioLogueado1)
-console.log(usernameInput)
-
 
 form.addEventListener("submit", e => {
     e.preventDefault();
@@ -20,6 +17,8 @@ function verificarLogin() {
     const valorcontrasena = contrasenaInput.value.trim();
     if ("admin" == valorUsuario && "admin" == valorcontrasena){
       window.location.href = "../html/adminPaciente.html"
+      let adminLogin = "adminLogueado"
+      localStorage.setItem('adminLogin',JSON.stringify(adminLogin));
     }
     const busquedaUsuario = dato.find(user => {
       if(user.usuario === valorUsuario && user.contrasena === valorcontrasena){

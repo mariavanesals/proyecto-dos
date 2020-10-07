@@ -5,7 +5,9 @@ let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario
 const cerrarSesion = document.getElementById("cerrarSesion");
 
-
+if(nombreUsuario === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
 
 form.addEventListener("submit", e =>{
 
@@ -72,9 +74,4 @@ function guardarBusqueda(){
             let valorBusqueda2 = busqueda.value
         localStorage.setItem('valorBusqueda',JSON.stringify(valorBusqueda2));
       }
-}
-
-
-if(nombreUsuario === "sinLogin"){
-    window.location.href = "../html/ReservaLista.html"
 }
