@@ -91,9 +91,9 @@ function mostrarModalTurno(){
 
 }
 
-//seleccionarFila()
+seleccionarFila()
 
-/*function seleccionarFila() {
+function seleccionarFila() {
     var table = document.getElementById('table1');
     var cells = table.getElementsByTagName('td');
 
@@ -116,5 +116,5 @@ function mostrarModalTurno(){
         }
     }
 
-}*/
+}
 

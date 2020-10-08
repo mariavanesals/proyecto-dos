@@ -9,6 +9,7 @@ let cerrarSesion = document.getElementById("cerrarSesion")
 let adminLogin = JSON.parse(localStorage.getItem("adminLogin"));
 
 
+
 if(adminLogin === "sinLogin"){
     window.location.href = "permisoDenegado.html"
 }
