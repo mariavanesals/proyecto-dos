@@ -8,6 +8,9 @@ let busquedasPosibles = ["neurocirujano", "neurologo", "cerebro", "dermatologo",
 localStorage.setItem('busquedasPosibles',JSON.stringify(busquedasPosibles));
 
 
+let busquedasPosibles = ["neurocirujano", "neurologo","cerebro", "dermatologo", "dermatologia", "piel","dentista", "odontolgia", "caries"];
+ localStorage.setItem("busquedasPosibles",JSON.stringify(busquedasPosibles));
+
 if(nombreUsuario === "sinLogin"){
     window.location.href = "permisoDenegado.html"
 }

@@ -65,7 +65,7 @@ function checkInputs() {
 	}
      
 }
-
+ 
 function almacenar(){
 	if(localStorage.getItem("users")){
 		let users1 = JSON.parse(localStorage.getItem("users"));
