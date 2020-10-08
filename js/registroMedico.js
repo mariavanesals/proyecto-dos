@@ -103,7 +103,7 @@ function almacenar(){
 				mail: email.value,
 				nombreCompleto: nombreCompleto.value,
 				disciplina: disciplina.value,
-				permiso: "no",
+				permiso: false,
 				horario: horario.value,
 				sucursal: sucursal.value
 				}
@@ -117,7 +117,7 @@ function almacenar(){
 				mail: email.value,
 				nombreCompleto: nombreCompleto.value,
 				disciplina: disciplina.value,
-				permiso: "no",
+				permiso: false,
 				horario: horario.value,
 				sucursal: sucursal.value
 			}

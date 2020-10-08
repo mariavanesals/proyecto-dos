@@ -1,9 +1,14 @@
 let form = document.getElementById("formularioMedico")
-
 let usuarioMedico = JSON.parse(localStorage.getItem("medicoLogueado"))
+if(usuarioMedico === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
+
 let doctores = JSON.parse(localStorage.getItem("doctors"))
 let infoMedico = doctores.filter(doctores => doctores.usuario === usuarioMedico);
-let nombreMedico = infoMedico[0].nombreCompleto
+let nombreMedico = infoMedico[0].nombreCompleto;
+const cerrarSesion = document.getElementById("cerrarSesion");
+
 
 document.getElementById("nombreMedico").innerHTML = nombreMedico;
 
@@ -14,8 +19,27 @@ form.addEventListener('submit', e => {
     actualizarPerfil()
 });
 
+cerrarSesion.addEventListener("click", e =>{
+
+  e.preventDefault();
+  deslogueo();
+  window.location.href = "../html/home.html"
+})
+
+function deslogueo(){
+if(localStorage.getItem("medicoLogueado")){
+  let medicoLogueado1 = "sinLogin"
+  localStorage.setItem('medicoLogueado',JSON.stringify(medicoLogueado1));
+} else {
+  let medicoLogueado = "sinLogin"
+  localStorage.setItem('medicoLogueado',JSON.stringify(medicoLogueado));
+}
+}
+
 function actualizarPerfil(){
     nombreMedico = infoMedico[0].nombreCompleto
+    infoMedico = doctores.filter(doctores => doctores.usuario === usuarioMedico);
+
     doctores = JSON.parse(localStorage.getItem("doctors"))
     let cambioSucursal = document.getElementById("cambioSucursal")
     let cambioHorario = document.getElementById("cambioHorario")

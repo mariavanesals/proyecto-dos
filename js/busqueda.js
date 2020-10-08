@@ -3,6 +3,11 @@ let table = document.getElementById("table1");
 let busqueda = JSON.parse(localStorage.getItem("valorBusqueda"))
 table.setAttribute("class", "tabla");
 let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
+const cerrarSesion = document.getElementById("cerrarSesion");
+
+if(nombreUsuario === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
 
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 
@@ -11,7 +16,22 @@ let dentistas = doctores.filter(doctores => doctores.disciplina === "dentista" &
 let neurocirujanos = doctores.filter(doctores => doctores.disciplina === "neurocirujano" & doctores.permiso === "si");
 let dermatologos = doctores.filter(doctores => doctores.disciplina === "dermatologo" & doctores.permiso === "si");
 
+cerrarSesion.addEventListener("click", e =>{
 
+    e.preventDefault();
+    deslogueo();
+    window.location.href = "../html/home.html"
+})
+
+function deslogueo(){
+	if(localStorage.getItem("usuarioLogueado")){
+    let usuarioLogueado1 = "sinLogin"
+    localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado1));
+	} else {
+		let usuarioLogueado = "sinLogin"
+    localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado));
+  }
+}
 
 if(busqueda == "neurocirujano" || busqueda == "neurologia" || busqueda == "cerebro"){
         tablaNeurocirujano()
@@ -153,9 +173,8 @@ function verificarTurnoLibre(){
         let aviso = "Este turno ya se encuentra ocupado"
         mostrarModalTurnoConfirmado(aviso)
     } else{
-        alert("nuevo turno reservado")
-        //ReservarTurno()
-        //window.location="ReservaLista.html"; 
+        ReservarTurno()
+        window.location="ReservaLista.html"; 
     }
 }
 

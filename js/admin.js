@@ -2,25 +2,33 @@ let users = JSON.parse(localStorage.getItem("users"));
 
 let table = document.getElementById("table1");
 table.setAttribute("class", "tabla");
-let usuarioLogueado = "Admin"
-document.getElementById("usuarioLogueado").innerHTML = usuarioLogueado
+let adminActivo = "Admin"
+document.getElementById("usuarioLogueado").innerHTML = adminActivo
 let data = Object.keys(users[0]);
+const cerrarSesion = document.getElementById("cerrarSesion");
+let adminLogin = JSON.parse(localStorage.getItem("adminLogin"));
 
-const btncerrarSesion = document.getElementById("cerrarSesion");
 
-btncerrarSesion.addEventListener("click", e => {
+if(adminLogin === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
+
+cerrarSesion.addEventListener("click", e =>{
+
   e.preventDefault();
-  cerrarSesion();
+  deslogueo();
+  window.location.href = "../html/home.html"
 })
-  function cerrarSesion(){
-    const deslogueo = "sinLogin"
-  };
 
-  if (usuarioLogueado === "sinLogin"){
-      window.location="permisoDenegado.html";
-  };
-
-
+function deslogueo(){
+if(localStorage.getItem("adminLogin")){
+  let adminLogin1 = "sinLogin"
+  localStorage.setItem('adminLogin',JSON.stringify(adminLogin1));
+  } else {
+  let adminLogin = "sinLogin"
+  localStorage.setItem('adminLogin',JSON.stringify(adminLogin));
+  }
+}
 
 
 

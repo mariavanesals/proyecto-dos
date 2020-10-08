@@ -6,10 +6,27 @@ document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 
 let turnosArchivados = JSON.parse(localStorage.getItem("turnosConfirmados"))
 let turnosUsuarioLogueado = turnosArchivados.filter(turnosConfirmados => turnosConfirmados.paciente === nombreUsuario);
+const cerrarSesion = document.getElementById("cerrarSesion");
 
+if(nombreUsuario === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
+cerrarSesion.addEventListener("click", e =>{
 
+    e.preventDefault();
+    deslogueo();
+    window.location.href = "../html/home.html"
+})
 
-
+function deslogueo(){
+	if(localStorage.getItem("usuarioLogueado")){
+    let usuarioLogueado1 = "sinLogin"
+    localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado1));
+	} else {
+		let usuarioLogueado = "sinLogin"
+    localStorage.setItem('usuarioLogueado',JSON.stringify(usuarioLogueado));
+  }
+}
 
 function tablaTurnos(){
     let data = Object.keys(turnosUsuarioLogueado[0]);

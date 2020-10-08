@@ -3,8 +3,32 @@ console.log(doctors)
 let table2 = document.getElementById("table2");
 table2.setAttribute("class", "tabla");
 let data2 = Object.keys(doctors[0]);
-let usuarioLogueado = "Admin"
-document.getElementById("usuarioLogueado").innerHTML = usuarioLogueado
+let adminActivo = "Admin"
+document.getElementById("usuarioLogueado").innerHTML = adminActivo
+let cerrarSesion = document.getElementById("cerrarSesion")
+let adminLogin = JSON.parse(localStorage.getItem("adminLogin"));
+
+
+if(adminLogin === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
+
+cerrarSesion.addEventListener("click", e =>{
+
+  e.preventDefault();
+  deslogueo();
+  window.location.href = "../html/home.html"
+})
+
+function deslogueo(){
+if(localStorage.getItem("adminLogin")){
+  let adminLogin1 = "sinLogin"
+  localStorage.setItem('adminLogin',JSON.stringify(adminLogin1));
+  } else {
+  let adminLogin = "sinLogin"
+  localStorage.setItem('adminLogin',JSON.stringify(adminLogin));
+  }
+}
 
 
 generateTable(table2, doctors);

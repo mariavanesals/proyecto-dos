@@ -20,6 +20,8 @@ const valorContrasena = contrasenaInput.value.trim();
     const valorcontrasena = contrasenaInput.value.trim();
     if ("admin" == valorUsuario && "admin" == valorcontrasena){
       window.location.href = "../html/adminPaciente.html"
+      let adminLogin = "adminLogueado"
+      localStorage.setItem('adminLogin',JSON.stringify(adminLogin));
     }
     const busquedaUsuario = dato.find(user => {
       if(user.usuario === valorUsuario && user.contrasena === valorcontrasena){
@@ -29,7 +31,7 @@ const valorContrasena = contrasenaInput.value.trim();
     if(busquedaUsuario){
       if (busquedaUsuario.permiso){
         window.location.href = "../html/medico.html"
-        LoginUsuario()
+        LoginMedico()
       } else {
         let aviso = "tienes que aguardar a la verificacion de la cuenta"
         mostrarModal(aviso)
