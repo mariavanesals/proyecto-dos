@@ -83,7 +83,11 @@ function checkInputs() {
 		
 	}
 	
+<<<<<<< HEAD
     if(checkUserName() && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && valorUsuario !== '') {
+=======
+    if(checkUserName() && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && valorUsuario !== '' && valorContrasena2 === valorContrasena) {
+>>>>>>> 9de0725b8b6b9af43e5823c953477e64db98168d
 		almacenar()
 		window.location="../html/registroListo.html"
 		

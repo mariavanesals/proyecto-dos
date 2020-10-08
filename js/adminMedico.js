@@ -95,7 +95,7 @@ function seleccionarUsuario(){
   console.log(MedicoAHabilitarValue)
   for (i=0;i<doctors.length;i++){
     if (doctors[i].nombreCompleto == MedicoAHabilitarValue){
-      doctors[i].permiso = "si"
+      doctors[i].permiso = true
       localStorage.setItem('doctors',JSON.stringify(doctors));
       window.location="adminMedico.html";
       console.log(doctors[i])   
