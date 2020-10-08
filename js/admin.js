@@ -91,7 +91,7 @@ function seleccionarUsuario(users){
   console.log(usuarioAHabilitar)
   for (i=0;i<users.length;i++){
     if (users[i].usuario == usuarioAHabilitarValue){
-      users[i].permiso = "si"
+      users[i].permiso = true
       localStorage.setItem('users',JSON.stringify(users));
       window.location="adminPaciente.html";
     }

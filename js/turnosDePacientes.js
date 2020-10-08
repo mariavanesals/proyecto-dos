@@ -4,13 +4,13 @@ let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 
+if(nombreUsuario === "sinLogin"){
+    window.location.href = "permisoDenegado.html"
+}
 let turnosArchivados = JSON.parse(localStorage.getItem("turnosConfirmados"))
 let turnosUsuarioLogueado = turnosArchivados.filter(turnosConfirmados => turnosConfirmados.paciente === nombreUsuario);
 const cerrarSesion = document.getElementById("cerrarSesion");
 
-if(nombreUsuario === "sinLogin"){
-    window.location.href = "permisoDenegado.html"
-}
 cerrarSesion.addEventListener("click", e =>{
 
     e.preventDefault();

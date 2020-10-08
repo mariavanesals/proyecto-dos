@@ -19,7 +19,7 @@ const valorContrasena = contrasenaInput.value.trim();
     const valorUsuario = usernameInput.value.trim();
     const valorcontrasena = contrasenaInput.value.trim();
     if ("admin" == valorUsuario && "admin" == valorcontrasena){
-      window.location.href = "../html/adminPaciente.html"
+      window.location.href = "../html/adminMedico.html"
       let adminLogin = "adminLogueado"
       localStorage.setItem('adminLogin',JSON.stringify(adminLogin));
     }

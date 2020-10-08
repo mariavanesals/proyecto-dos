@@ -12,10 +12,10 @@ if(nombreUsuario === "sinLogin"){
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario;
 
 let doctores = JSON.parse(localStorage.getItem("doctors"))
-let dentistas = doctores.filter(doctores => doctores.disciplina === "dentista" & doctores.permiso === "si");
-let neurocirujanos = doctores.filter(doctores => doctores.disciplina === "neurocirujano" & doctores.permiso === "si");
-let dermatologos = doctores.filter(doctores => doctores.disciplina === "dermatologo" & doctores.permiso === "si");
-
+let dentistas = doctores.filter(doctores => doctores.disciplina === "dentista" & doctores.permiso === true);
+let neurocirujanos = doctores.filter(doctores => doctores.disciplina === "neurocirujano" & doctores.permiso === true);
+let dermatologos = doctores.filter(doctores => doctores.disciplina === "dermatologo" & doctores.permiso === true);
+console.log(neurocirujanos)
 cerrarSesion.addEventListener("click", e =>{
 
     e.preventDefault();
@@ -151,7 +151,7 @@ let botonReservar = document.getElementById("botonReservar")
 
 botonReservar.addEventListener("click", e => {
     e.preventDefault();
-    
+
     verificarTurnoLibre()
 })
 
