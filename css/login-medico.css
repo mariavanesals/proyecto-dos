@@ -152,17 +152,8 @@ body {
 	}
 }
 
-/*.container6 .row {
-	display: flex;
-	justify-content: center;
-	align-self: center;
-	width: 100%;
-	margin-left: 0px;
-	margin-right: 0px;
-	padding-right: 0px;
-	padding-left: 0px;
-}*/
-.container7 {
-	width: 90%;
-    box-sizing: border-box;
+.container6 .row {
+    width: 95%;
+    margin-left: 2px;
+    padding-left: 1px;
 }
