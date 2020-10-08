@@ -4,6 +4,9 @@ const busqueda = document.getElementById("busqueda")
 let nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
 document.getElementById("nombreUsuario").innerHTML = nombreUsuario
 const cerrarSesion = document.getElementById("cerrarSesion");
+let busquedasPosibles = ["neurocirujano", "neurologo", "cerebro", "dermatologo", "dermatologia", "piel", "dentista", "odontologia", "caries"]
+localStorage.setItem('busquedasPosibles',JSON.stringify(busquedasPosibles));
+
 
 if(nombreUsuario === "sinLogin"){
     window.location.href = "permisoDenegado.html"

@@ -70,7 +70,7 @@ function checkInputs() {
 		mostrarExito(password2);
 	}
 	
-	function checkUserName(){
+	/*function checkUserName(){
 		let dato = JSON.parse(localStorage.getItem("doctors"))
 		console.log(dato)
 		for(i=0;i<dato.length;i++){
@@ -81,9 +81,9 @@ function checkInputs() {
 			return true
 		}
 		
-	}
+	}*/
 	
-    if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && checkUserName()) {
+    if(/*checkUserName() &&*/ valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && valorUsuario !== '') {
 		almacenar()
 		window.location="../html/registroListo.html"
 		
