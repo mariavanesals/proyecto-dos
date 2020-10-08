@@ -397,8 +397,7 @@
 	font-weight: bold;
   }
   
-  .close1:hover,
-  .close1:focus {
+  .close1:hover {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
@@ -409,6 +408,11 @@
 
 
 @media (max-width: 1000px){
+    .contenidoModalReservado{
+		left: 0px;
+		width: 80%;
+		top: 160px;
+	}
     #modalTurno{
         width: 40%;
         top: 230px;
@@ -422,6 +426,11 @@
 }
 
 @media (max-width: 768px){
+    .contenidoModalReservado{
+		left: 0px;
+		width: 70%;
+		top: 160px;
+	}
     #modalTurno{
         width: 70%;
         top: 230px;
@@ -443,6 +452,13 @@
 
 
 @media (max-width: 410px){
+    
+    .contenidoModalReservado{
+        left: 0px;
+        width: 80%;
+        top: 160px;
+    }
+    
 
     .modalMedico{
         width: 102%;
