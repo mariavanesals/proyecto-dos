@@ -153,28 +153,42 @@ botonReservar.addEventListener("click", e => {
     e.preventDefault();
     
     verificarTurnoLibre()
-    //ReservarTurno()
-    //window.location="ReservaLista.html"; 
 })
 
 function verificarTurnoLibre(){
     turnosConfirmados = JSON.parse(localStorage.getItem("turnosConfirmados"))
+    nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"))
+    let medicoSeleccionado = JSON.parse(localStorage.getItem("doctorSeleccionado"))
     const fecha = document.getElementById("fechaCalendario")
     const hora = document.getElementById("hora")
     const fechaValue = fecha.value
     const horaValue = hora.value
-    const turnoYaOcupado = turnosConfirmados.find(turno => {
-    if(turno.hora === horaValue && turno.fecha === fechaValue){
-        return turno
+
+    const medicoOcupado = turnosConfirmados.find(turno =>{
+        if(turno.paciente === nombreUsuario && turno.doctor === medicoSeleccionado){
+            return turno
         }
     })
-    console.log(turnoYaOcupado)   
-    if(turnoYaOcupado){
-        let aviso = "Este turno ya se encuentra ocupado"
+    if(medicoOcupado){
+        let aviso = "Ya tienes un turno con este doctor"
         mostrarModalTurnoConfirmado(aviso)
     } else{
-        ReservarTurno()
-        window.location="ReservaLista.html"; 
+        chequearFecha()
+    }
+    function chequearFecha(){
+        const turnoYaOcupado = turnosConfirmados.find(turno1 => {
+        if(turno1.hora === horaValue && turno1.fecha === fechaValue && turno1.doctor === doctorSeleccionado){
+            return turno1
+            }
+        })
+        console.log(turnoYaOcupado)   
+        if(turnoYaOcupado){
+            let aviso = "Este turno ya se encuentra ocupado"
+            mostrarModalTurnoConfirmado(aviso)
+        } else{
+            ReservarTurno()
+            window.location="ReservaLista.html"; 
+        }
     }
 }
 

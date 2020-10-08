@@ -70,13 +70,11 @@ function checkInputs() {
 		mostrarExito(password2);
 	}
 	
-
-
 	function checkUserName(){
 		let dato = JSON.parse(localStorage.getItem("doctors"))
 		console.log(dato)
 		for(i=0;i<dato.length;i++){
-			if(valorUsuario == dato[i].usuario){
+			if(valorUsuario === dato[i].usuario){
 				mostrarError(usuario, "el usuario ingresado esta en uso")
 				return false
 			} 
@@ -84,7 +82,6 @@ function checkInputs() {
 		}
 		
 	}
-
 	
     if(valorUsuario !== '' && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && checkUserName()) {
 		almacenar()
@@ -92,6 +89,8 @@ function checkInputs() {
 		
 	}  
 }
+
+
 
 function almacenar(){
 	if(localStorage.getItem("doctors")){

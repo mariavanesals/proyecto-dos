@@ -113,7 +113,12 @@ a:hover {
     width: 70%;
     
 }
-
+@media(min-height: 500px){
+    .fondo{
+        background-color: var(--grey);
+        height: 1024px;
+    }
+}
 
 @media (max-width: 768px) {
     #sidebar-container {
@@ -153,7 +158,7 @@ a:hover {
 @media (max-width: 380px) {
     .tablaAdminPaciente td {
         border: 1px solid #ddd;
-        padding: 4px;
+        padding: 3.5px;
         font-size: 13px;
         text-align: center;
         position: sticky;
@@ -162,7 +167,7 @@ a:hover {
     }
     .tablaAdminPaciente th{
         border: 1px solid #ddd;
-        padding: 4px;
+        padding: 2px;
         font-size: 13px;
         text-align: center; 
     }
@@ -184,11 +189,6 @@ a:hover {
   @media (max-width: 320px){
     .table{
         width: 60%;
-        
-    }
-    .table-responsive1{
-        display: block;
-        width: 50%;
         
     }
 }

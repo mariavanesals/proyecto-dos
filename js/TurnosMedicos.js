@@ -43,6 +43,9 @@ function tablaTurnos(){
     generateTableHead(table,data);
 }
 
+tablaTurnos()
+
+
 
 function generateTableHead(table) {
     let thead = table.createTHead();
@@ -62,6 +65,7 @@ function generateTableHead(table) {
 function generateTable(table, data) {
     for (let element of data) {
       let row = table1.insertRow();
+      row.addEventListener("click", () => {mostrarModal()})
 
       for (key in element) {
         if(key == "paciente" || key == "hora" || key == "fecha"){
@@ -73,7 +77,25 @@ function generateTable(table, data) {
     }
 }
 
-tablaTurnos()
+function mostrarModal(){
+    let modal = document.getElementById("myModal1")
+    var span = document.getElementsByClassName("close1")[0];
+
+    let pacienteSeleccionado = JSON.parse(localStorage.getItem("pacienteSeleccionado"))
+
+    turnosArchivados = JSON.parse(localStorage.getItem("turnosConfirmados"))
+    let infoTurno = turnosArchivados.filter(turnos => turnos.paciente === pacienteSeleccionado && turnos.doctor === nombreMedico);
+    let motivoConsulta = infoTurno[0].consulta
+    modal.style.display = "block";
+  
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    document.getElementById("modalText").innerHTML = motivoConsulta;
+  
+  }
+
 
 
 
@@ -96,11 +118,11 @@ function seleccionarFila() {
             var rowSelected = table.getElementsByTagName('tr')[rowId];
             rowSelected.className += " selected";
 
-            doctorSeleccionado = rowSelected.cells[0].innerHTML;
-            localStorage.setItem("doctorSeleccionado",JSON.stringify(doctorSeleccionado))
-            console.log(doctorSeleccionado)
+            pacienteSeleccionado = rowSelected.cells[0].innerHTML;
+            localStorage.setItem("pacienteSeleccionado",JSON.stringify(pacienteSeleccionado))
         }
     }
 
 }
+
 
