@@ -51,18 +51,6 @@ function buscar(){
         alert("no se encontro resultados de su busqueda")
     }
 
-    /*if(valorBusqueda == "neurocirujano" || valorBusqueda == "neurologo" || valorBusqueda == "cerebro"){
-        guardarBusqueda()
-        window.location.href = "../html/busqueda.html"
-    } else if (valorBusqueda == "dermatologo" || valorBusqueda == "dermatologia" || valorBusqueda == "piel"){
-        guardarBusqueda()
-        window.location.href = "../html/busqueda.html"
-    } else if (valorBusqueda == "dentista" || valorBusqueda == "odontologia" || valorBusqueda == "caries"){
-        guardarBusqueda()
-        window.location.href = "../html/busqueda.html"
-    } else {
-        alert("no se encontro resultados de su busqueda")
-    }*/
 }
 
 function guardarBusqueda(){

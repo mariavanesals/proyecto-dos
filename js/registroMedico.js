@@ -71,17 +71,21 @@ function checkInputs() {
 	}
 	
 	function checkUserName(){
-		let dato = JSON.parse(localStorage.getItem("doctors"))
-		console.log(dato)
-		for(i=0;i<dato.length;i++){
-			if(valorUsuario === dato[i].usuario){
-				mostrarError(usuario, "el usuario ingresado esta en uso")
-				return false
-			} 
+		if(localStorage.getItem("doctors")){
+			let dato = JSON.parse(localStorage.getItem("doctors"))
+			console.log(dato)
+			for(i=0;i<dato.length;i++){
+				if(valorUsuario === dato[i].usuario){
+					mostrarError(usuario, "el usuario ingresado esta en uso")
+					return false
+				} 
+				return true
+			}
+		} else {
 			return true
 		}
-		
 	}
+	
 	
     if(checkUserName() && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && valorUsuario !== '' && valorContrasena2 === valorContrasena) {
 		almacenar()

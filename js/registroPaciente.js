@@ -45,7 +45,7 @@ function checkInputs() {
 	}
 	
 	function checkUserName(){
-		
+		if(localStorage.getItem("users")){
 			let dato = JSON.parse(localStorage.getItem("users"))
 			for(i=0;i<dato.length;i++){
 				if(valorUsuario === dato[i].usuario){
@@ -54,7 +54,9 @@ function checkInputs() {
 				} 
 				return true
 			}
-				
+		} else {
+			return true
+		}			
 	}
 
 	
