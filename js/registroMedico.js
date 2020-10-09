@@ -86,11 +86,9 @@ function checkInputs() {
 		}
 	}
 	
-	
-    if(checkUserName() && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && valorUsuario !== '' && valorContrasena2 === valorContrasena) {
+    if(checkUserName() && valorEmail !== '' && valorContrasena !== '' && valorDisciplina !== '' && valorNombreCompleto !== '' && valorContrasena2 !== ''  && valorUsuario !== '') {
 		almacenar()
 		window.location="../html/registroListo.html"
-		
 	}  
 }
 
